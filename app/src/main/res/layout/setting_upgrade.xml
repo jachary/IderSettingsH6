@@ -107,14 +107,14 @@
      android:layout_marginTop="20dp"
       android:background="@drawable/my_bgbg">
      <ImageView 
-         android:id="@+id/updateimage"
+         android:id="@+id/updateimage1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:src="@drawable/ic_launcher"
          android:layout_marginLeft="20dp"
          />
      <TextView 
-         android:id="@+id/updatetext"
+         android:id="@+id/updatetext1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:textColor="#FFFFFF"
@@ -137,14 +137,14 @@
       android:background="@drawable/my_bgbg"
      >
      <ImageView 
-         android:id="@+id/updateimage"
+         android:id="@+id/updateimage2"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:src="@drawable/ai_update"
          android:layout_marginLeft="20dp"
          />
      <TextView 
-         android:id="@+id/updatetext"
+         android:id="@+id/updatetext2"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_marginLeft="20dp"

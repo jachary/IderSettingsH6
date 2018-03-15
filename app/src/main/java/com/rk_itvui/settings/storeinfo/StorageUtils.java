@@ -9,7 +9,8 @@ import android.util.Log;
 import android.os.Environment;
 
 /** 
- *StorageUtils is use to get correct storage path between ics and gingerbread.
+ *StorageUtils is use to get correct sgradle  clean
+ * torage path between ics and gingerbread.
  *add by lijiehong
  */ 
 public class StorageUtils { 

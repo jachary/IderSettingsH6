@@ -3,12 +3,13 @@
     coreApp="true"
     package="com.zxy.idersettings"
     android:versionCode="11"
-    android:versionName="2.0.3-5.1-20171027" 
-   >
+    android:versionName="2.0.3-5.1-20171027"
+android:sharedUserId="android.uid.system"
+    >
     <uses-sdk android:minSdkVersion="15" />
-<!--  android:sharedUserId="android.uid.system"   
-<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
- <uses-permission android:name="android.permission.SET_TIME" />-->
+
+ <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+ <uses-permission android:name="android.permission.SET_TIME" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INTERNET" />

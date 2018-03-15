@@ -73,7 +73,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center">
 
-        <ImageView android:id="@+id/media_mute_button"
+        <ImageView android:id="@+id/media_mute_button2"
                    android:layout_width="50dp"
                    android:layout_height="50dp"
                    android:padding="10dip"
@@ -92,7 +92,7 @@
                  android:thumb="@xml/thumb"
                  android:layout_gravity="center"
                  />
-        <ImageView android:id="@+id/media_mute_button"
+        <ImageView android:id="@+id/media_mute_button1"
                    android:layout_width="57dp"
                    android:layout_height="57dp"
                    android:padding="10dip"

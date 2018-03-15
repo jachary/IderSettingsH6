@@ -81,7 +81,7 @@
                     android:paddingLeft="6dip"/>
 
                 <ImageView
-                    android:id="@+id/info_size_dots"
+                    android:id="@+id/info_size_dots2"
                     android:src="@drawable/dotted_line_480px"
                     android:layout_width="0dip"
                     android:layout_weight="1"
@@ -117,7 +117,7 @@
                     android:paddingTop="6dip"
                     android:paddingLeft="6dip"/>
                 <ImageView
-                    android:id="@+id/info_size_dots"
+                    android:id="@+id/info_size_dots3"
                     android:src="@drawable/dotted_line_480px"
                     android:layout_width="0dip"
                     android:layout_weight="1"
@@ -154,7 +154,7 @@
                     android:paddingTop="6dip"
                     android:paddingLeft="6dip"/>
                 <ImageView
-                    android:id="@+id/info_size_dots"
+                    android:id="@+id/info_size_dots1"
                     android:src="@drawable/dotted_line_480px"
                     android:layout_width="0dip"
                     android:layout_weight="1"
