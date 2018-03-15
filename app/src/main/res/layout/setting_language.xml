@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".language.LanguageActivity"
+    android:paddingLeft="@dimen/setting_content_padlr"
+    android:paddingRight="@dimen/setting_content_padlr"
+    android:paddingTop="@dimen/setting_content_padtb"
+    android:paddingBottom="@dimen/setting_content_padtb"
+	>
+
+    <!-- Content -->
+    <LinearLayout
+        android:id="@+id/upgrade_content"
+       	android:layout_width="match_parent"
+       	android:layout_height="match_parent"
+       	android:orientation="horizontal"
+       	android:layout_gravity="center_horizontal"
+       	android:gravity="center_horizontal"
+        android:paddingTop="50dp">
+	    <ListView
+	        android:id="@id/list_view"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:cacheColorHint="@android:color/transparent"
+	        android:listSelector="@drawable/setting_list_focus"
+	        android:divider="@drawable/setting_listview_split"
+	        android:layout_marginTop="@dimen/setting_list_pad"
+	        android:scrollbars="none"
+	        android:layout_marginBottom="@dimen/setting_list_pad"/>
+ 	</LinearLayout>
+
+</LinearLayout>

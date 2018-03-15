@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/setting_content_padlr"
+    android:paddingRight="@dimen/setting_content_padlr"
+    android:paddingTop="@dimen/setting_content_padtb"
+    android:paddingBottom="@dimen/setting_content_padtb"
+    android:orientation="vertical" >
+    <!-- Header -->
+   	<LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:orientation="horizontal" >
+    	
+		 <TextView
+            android:id="@+id/app_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/viewpager_icon_h"
+            android:drawableLeft="@drawable/settings_icon"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/viewpager_left"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/title_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow_right" />
+        
+    	<TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/application_manage"
+        android:textSize="@dimen/setting_title_size"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+     <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_head_line"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/list_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1" >
+
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@drawable/setting_listview_split"
+                    android:drawSelectorOnTop="false"
+                    android:listSelector="@drawable/listview_selector_wifi"  />
+
+                <TextView
+                    android:id="@android:id/empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/no_applications"
+                    android:textColor="@android:color/white"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </FrameLayout>
+
+            <view
+                android:id="@+id/storage_color_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                class="com.rk_itvui.settings.dialog.LinearColorBar"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingBottom="1dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="30dp" >
+
+                <TextView
+                    android:id="@+id/usedStorageText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/storageChartLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-20dp"
+                    android:layout_weight="0"
+                    android:shadowColor="#000"
+                    android:shadowRadius="5"
+                    android:singleLine="true"
+                    android:text="@string/internal_storage"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="#ccc"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/freeStorageText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="#000" />
+            </view>
+        </LinearLayout>
+
+        <view
+            android:id="@+id/running_processes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.rk_itvui.settings.dialog.RunningProcessesView"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/loading_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dip"
+                android:singleLine="true"
+                android:text="@string/settings_safetylegal_activity_loading"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

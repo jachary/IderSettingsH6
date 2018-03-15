@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    package="com.zxy.idersettings"
+    android:versionCode="11"
+    android:versionName="2.0.3-5.1-20171027" 
+   >
+    <uses-sdk android:minSdkVersion="15" />
+<!--  android:sharedUserId="android.uid.system"   
+<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+ <uses-permission android:name="android.permission.SET_TIME" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <!--<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />-->
+ <!--<uses-permission android:name="android.permission.SET_TIME" />-->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
+    <application
+        android:icon="@drawable/settings_icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.rk_itvui.settings.Settings"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+	<!-- Network settings -->
+        <activity
+            android:name="com.rk_itvui.settings.network_settingnew"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.network.WireNetworkFragment"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity
+            android:name="com.rk_itvui.settings.network.EthernetDHCPInfoSetting"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rk_itvui.settings.network.pppoe.EthernetPppoeSetting"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.network.WirelessNetworkFragment"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.network.WifiApFragment"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.network.WifiFragment"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity
+            android:name="com.rk_itvui.settings.network.WireNetworkSetting"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rk_itvui.settings.network.EthernetStaticIPSetting"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rk_itvui.settings.network.wifi.Wifi_setting"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.rk_itvui.settings.network.wifi.Wifi_setting" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rk_itvui.settings.network.wifi.WifiAp_Settings"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+	<!--language -->
+	<activity android:name="com.rk_itvui.settings.language.LanguageInputmethod"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name="com.rk_itvui.settings.language.LanguageActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<!--<activity android:name="com.rk_itvui.settings.language.LanguageSettingAlterDialogActivity"-->
+                <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>        -->
+        <!---->
+         <!--<activity android:name="com.rk_itvui.settings.language.KeyBoardSettingAlterDialogActivity"-->
+        		<!--android:theme="@style/MyDialog">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<action android:name="android.settings.INPUT_METHOD_SETTINGS" />-->
+                <!--<category android:name="android.intent.category.VOICE_LAUNCH" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="com.android.settings.SHORTCUT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+               
+        <!-- sound setting  -->
+		<activity android:name="com.rk_itvui.settings.sound.SoundSetting"
+                android:theme="@style/Theme.Holo.SMJ_Window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+                     
+        <activity android:name="com.rk_itvui.settings.sound.SoundDevicesManager"
+                  android:theme="@style/Theme.Holo.SMJ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.rk_itvui.settings.sound.VolumeSetting"
+                  android:theme="@style/Theme.Holo.SMJ">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+             
+         <!-- date_time setting -->       
+        <activity android:name="com.rk_itvui.settings.datetime.DateTimeSetting"
+            	android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>               
+        </activity>
+               
+        <!--<activity android:name="com.rk_itvui.settings.datetime.TimeZoneAlterDialogActivity"-->
+            	<!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>               -->
+        <!--</activity>-->
+        <activity android:name="com.rk_itvui.settings.datetime.TimeActivity"
+            	android:theme="@android:style/Theme.NoTitleBar.Fullscreen">   
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>           
+        </activity>
+        
+         <!-- duoping settings -->
+        <activity
+            android:name="com.rk_itvui.settings.PersonalSetting"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- ManageApplications -->
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.dialog.ManageApplications"-->
+            <!--android:screenOrientation="landscape"-->
+            <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >-->
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="com.rk_itvui.settings.dialog.RunningServiceDetails"-->
+            <!--android:theme="@*android:style/Theme.Dialog.Alert" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!-- DevelopmentSettings -->
+        <activity
+            android:name="com.rk_itvui.settings.developer.DevelopmentSettings"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+                <activity android:name="com.rk_itvui.settings.deviceinfo.UsbSettings"
+                  android:label="@string/storage_title_usb"
+                  android:theme="@android:style/Theme.Holo.DialogWhenLarge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        
+        <!--  display settings -->
+        <!--<activity android:name="com.rk_itvui.settings.DisplaySetting"-->
+                <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!--  scale settings -->
+        <activity android:name="com.rk_itvui.settings.screen.ScreenScaleActivity"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!--  DevicesInfo settings -->
+        <!--<activity android:name="com.rk_itvui.settings.DevicesInfo"-->
+                <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>    -->
+        
+        <!--  storeinfo settings -->
+        <activity android:name="com.rk_itvui.settings.storeinfo.Storage"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>   
+                
+        <!--  factoryreset settings -->
+        <activity android:name="com.rk_itvui.settings.factoryreset.Factoryreset"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+        <!--  deviceversion settings -->
+        <activity android:name="com.rk_itvui.settings.deviceversion.Deviceversion"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+     
+        
+        <!--  ScreenSetting settings -->
+        <activity android:name="com.rk_itvui.settings.ScreensSettings"
+                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>   
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.android.settings.fileszxy"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+         <!-- Upgrade -->
+         
+        <activity android:name="com.rk_itvui.settings.upgrade.UpgradeActivity"
+                  android:label="@string/upgrade_title"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:exported="true">
+        </activity>
+ 
+         <activity android:name="com.rk_itvui.settings.pppoe.PppoeDialog"
+                  >
+        </activity>
+          <!--<activity android:name="com.rk_itvui.settings.dialog.DisplayPercentPreference"-->
+					<!--android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"-->
+                  <!--&gt;-->
+        <!--</activity>-->
+    </application>
+
+</manifest>

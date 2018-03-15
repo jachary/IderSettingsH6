@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="grid_view"/>
+    <item type="id" name="list_view"/>
+    <item type="id" name="list_icon"/>
+    <item type="id" name="list_title"/>
+    <item type="id" name="list_detail"/>
+</resources>

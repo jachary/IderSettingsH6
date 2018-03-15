@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview"
+    android:layout_width="wrap_content"
+    android:layout_height="320dp"
+    android:layout_marginTop="@dimen/setting_list_pad"
+    android:listSelector="@drawable/setting_list_focus"
+	  android:divider="@drawable/setting_listview_split"
+    android:cacheColorHint="#00000000" />

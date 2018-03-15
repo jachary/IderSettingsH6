@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/setting_content_padlr"
+    android:paddingRight="@dimen/setting_content_padlr"
+    android:paddingTop="@dimen/setting_content_padtb"
+    android:paddingBottom="@dimen/setting_content_padtb"
+    android:orientation="vertical" >
+    
+	<!-- Header -->
+   	<LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:orientation="horizontal" >
+    	
+		 <TextView
+            android:id="@+id/app_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/viewpager_icon_h"
+            android:drawableLeft="@drawable/settings_icon"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/viewpager_left"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="30sp" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/title_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow_right" />
+        
+    	<TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language_settings"
+        android:textSize="@dimen/setting_title_size"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+     <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_head_line"/>   
+    		
+	<LinearLayout android:id="@+id/language_setting_show"
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:gravity="center_vertical">
+
+	<ListView
+	    android:id="@+id/language_list"
+	    android:layout_width="0dp"
+	    android:layout_height="fill_parent"
+	    android:cacheColorHint="#00000000" 
+	    android:divider="@drawable/setting_listview_split"
+	    android:focusable="false"
+	    android:layout_gravity="top"
+	    android:layout_weight="4"
+	    android:clickable="true"
+	    android:paddingTop="@dimen/setting_list_pad"
+	    android:listSelector="@android:color/transparent"
+	    />
+		
+	</LinearLayout>
+	
+	<ListView
+	    android:id="@android:id/list"
+	    android:layout_width="0dp"
+	    android:layout_height="0dp"
+	    android:clickable="true"
+	    android:focusable="false" >
+  
+	</ListView>
+	
+
+</LinearLayout>
+

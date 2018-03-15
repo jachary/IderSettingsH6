@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:greendroid="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/setting_content_padlr"
+    android:paddingRight="@dimen/setting_content_padlr"
+    android:paddingTop="@dimen/setting_content_padtb"
+    android:paddingBottom="@dimen/setting_content_padtb"
+    android:background="@drawable/bg_launcher"
+ >
+
+    <TextView
+        android:id="@+id/app_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/settings_icon"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/viewpager_left"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" >
+    </TextView>
+
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_text"
+        android:background="@drawable/settings_head_line"/>
+
+    <Button
+        android:id="@+id/arrow_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/left_icon"
+        android:focusable="false" />
+
+    <Button
+        android:id="@+id/arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/right_icon_select"
+        android:focusable="false" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/app_viewpager"
+            android:layout_width="@dimen/viewpager_w"
+            android:layout_height="900dp"
+            android:layout_marginTop="@dimen/setting_list_pad"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+    <!-- page indicator -->
+
+    <com.rk_itvui.settings.PageIndicator
+        android:id="@+id/page_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/viewpager_icon_textsize"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/viewpager_bottom"
+        android:visibility="gone"
+        greendroid:dotDrawable="@drawable/gd_page_indicator_dot" />
+        
+       
+        
+       
+</RelativeLayout>
