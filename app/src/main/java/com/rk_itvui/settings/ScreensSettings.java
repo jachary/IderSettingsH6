@@ -6,18 +6,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-import com.rk_itvui.settings.dialog.DisplayPercentPreference;
+import com.rk_itvui.settings.dialog.DisplaySize;
 import com.rk_itvui.settings.screen.DisplayAdjuestDialog;
 import com.rk_itvui.settings.screen.PreferenceManager;
 import com.rk_itvui.settings.screen.ScreenScaleActivity;
 
 import com.rk_itvui.settings.screen.ScreenSetting;
 import com.rk_itvui.settings.tranlete.ActivityAnimationTool;
-import com.zxy.idersettings.R;
 
+import com.zxy.idersettings.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -202,11 +203,15 @@ public void onItemClick(AdapterView<?> arg0, View view, int index, long arg3) {
 	switch (index) {
 	case 0:
 		Log.d("ScreenSettings", "=====================================displayscale");
-		Intent intentscale = new Intent(ScreensSettings.this, DisplayPercentPreference.class);
-		startIntentWithTranlete(ScreensSettings.this,intentscale);
-//		Intent intentscale1 = new Intent();
-//		intentscale1.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$DisplaySettingsActivity"));
-//        startActivity(intentscale1);
+//		Intent intentscale = new Intent(ScreensSettings.this, DisplayPercentPreference.class);
+//		startIntentWithTranlete(ScreensSettings.this,intentscale);
+////		Intent intentscale1 = new Intent();
+////		intentscale1.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$DisplaySettingsActivity"));
+////        startActivity(intentscale1);
+		Intent intent = new Intent();
+
+		intent.setComponent(new ComponentName(this.getPackageName(), "com.rk_itvui.settings.dialog.DisplaySize"));
+		startActivity(intent);
 		break;
 	case 1:
 		 Log.d("ScreenSettings", "=====================================onclick1");
@@ -264,6 +269,8 @@ public void onItemClick(AdapterView<?> arg0, View view, int index, long arg3) {
 		
 	}
 }
+
+
 
 
 boolean plugged = true;//hdmi or cvbs

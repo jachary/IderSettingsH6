@@ -32,7 +32,7 @@ import android.os.SystemProperties;
 
 
 public class ScreenSetting {
-	private static final String TAG = "ScreenSettings";
+	private static final String TAG = "Settings2-Screen";
 	private static final boolean DEBUG = true;
 	private void LOG(String msg){
 		if (DEBUG){
@@ -489,7 +489,7 @@ public class ScreenSetting {
 			break;
 
 		case R.string.screenscale:
-			LOG("screen scale onClick");
+			Log.d(TAG,"Screensize item is clicked ");
 //			if (mScreenScale == null) {
 //				mScreenScale = new ScreenScaleSettings(mContext, mUIHandler);
 //			}
@@ -499,13 +499,13 @@ public class ScreenSetting {
 			break;
 			
 		case R.string.screen_interface:
-			LOG("screen interface onClick");
+			Log.d(TAG,"screen interface onClick");
 			InitIfaceDialog(mContext);
 			mOutputInterfaceDialog.show();
 			break;
 			
 		case R.string.screen_mode_title:
-			LOG("screen mode onClick");
+			Log.d(TAG,"screen mode onClick");
 		    InitModeDialog(mContext);
 			mModeDialog.show();
 			break;

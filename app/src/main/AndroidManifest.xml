@@ -363,10 +363,12 @@ android:sharedUserId="android.uid.system"
          <activity android:name="com.rk_itvui.settings.pppoe.PppoeDialog"
                   >
         </activity>
-          <!--<activity android:name="com.rk_itvui.settings.dialog.DisplayPercentPreference"-->
-					<!--android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"-->
-                  <!--&gt;-->
-        <!--</activity>-->
+          <activity android:name="com.rk_itvui.settings.dialog.DisplaySize"
+
+
+
+                  >
+        </activity>
     </application>
 
 </manifest>
