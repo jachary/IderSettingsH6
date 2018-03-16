@@ -72,8 +72,8 @@
     <string name="sound_output_devices">Sound Output Devices</string>
     <string name="sound_output_default">Default Output</string>
     <string name="sound_output_hdmi_passthrough">HDMI Bitstream</string>
-    <string name="opentheTVmode">Open the TV mode</string>
-     <string name="closetheTVmode">Close the TV mode</string>
+    <string name="opentheTVmode">TV模式打开，视频从电视出声</string>
+     <string name="closetheTVmode">TV模式关闭，声音从喇叭发出</string>
     <string name="sound_output_spdif_passthrough">Spdif Passthrough</string>
     <string name="sound_output_hdmi_multilpcm">HDMI Multi Lpcm</string>
     <!-- $_rbox_$_modify_$_zhangxueguang_$_end_$_20120319_$ -->

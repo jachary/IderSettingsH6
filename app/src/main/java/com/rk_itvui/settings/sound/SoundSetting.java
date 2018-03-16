@@ -47,7 +47,7 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 //	HashMap<String, Object> map_LockVoice = new HashMap<String, Object>();
 
 	SimpleAdapter listItemAdapter;
-	
+	private static final String TAG = "Settings2-SoundSetting";
 	private VolumeSettings mVolumeSettings = null;
 	private AudioManager mAudioManager;
 	
@@ -56,14 +56,16 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 	 private TwoStatePreference mTvModePreference;
 	private boolean isPressVoiceEnable ;
 //	private boolean isLockSoundEnabled ;
-	private boolean openmode;
+
     private String mSelectedPlaybackKey;
+	public int openmode = 0;
     private static final String KEY_TV_AUDIO_MODE = "tv_audio_mode";
   	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sound_setting_new);
+		openmode =Settings.System.getInt(getContentResolver(),Settings.System.TV_AUDIO_MODE,0);
 		addListView();
 		ActivityAnimationTool.prepareAnimation(this);
         ActivityAnimationTool.animate(this, 1000);
@@ -85,15 +87,18 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 		
 		map_Audioout.put("SoundSettingIcon",R.drawable.audioout);
 		map_Audioout.put("SoundSettingItem", getString(R.string.audioout));
-		openmode =false;
-		if (openmode==false) {
-			Log.d("case1111=== if  openmode", "====" +openmode);
+
+		if (openmode== 1) {
+			//Log.d("case1111=== if  openmode", "====" +openmode);
 			map_Audioout.put("SoundSettingStatus", getString(R.string.opentheTVmode));
+
+
 			
 		}
-		if (openmode==true) {
-			Log.d("case=== else  openmode", "====" +openmode);
+		if (openmode== 0) {
+
 			map_Audioout.put("SoundSettingStatus", getString(R.string.closetheTVmode));
+
 		}
 		
 
@@ -178,7 +183,9 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
     }
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View view, int index, long arg3) {
+		Log.d(TAG,"index is ："+ index);
 		switch (index) {
+
 		
 			case 0:
 //				Log.d("smj", "=====================================onclick0");
@@ -194,13 +201,19 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 //				Intent intent_audioout = new Intent();
 //				intent_audioout.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$SoundSettingsActivity"));
 //                startActivity(intent_audioout);
-				openmode = !openmode;
-				if (openmode) {
-					Log.d("case=== if  openmode", "====" +openmode);
-				}else {
-					Log.d("case=== else  openmode", "====" +openmode);
+
+
+				if (openmode == 1) {
+					Settings.System.putInt(getContentResolver(),Settings.System.TV_AUDIO_MODE,0);
+					listItem.get(index).put("SoundSettingStatus",getString(R.string.closetheTVmode));
+					openmode = 0;
+				}else if (openmode == 0){
+					Settings.System.putInt(getContentResolver(),Settings.System.TV_AUDIO_MODE,1);
+					listItem.get(index).put("SoundSettingStatus",getString(R.string.opentheTVmode));
+					openmode = 1 ;
 				}
-				
+
+				listItemAdapter.notifyDataSetChanged();
 				break;
 			case 2:
 				Log.d("smj", "=====================================onclick1");	
