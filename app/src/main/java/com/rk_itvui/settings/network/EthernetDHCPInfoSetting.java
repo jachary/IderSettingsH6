@@ -47,62 +47,62 @@ public class EthernetDHCPInfoSetting extends FullScreenActivity {
 		@Override
 	    public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
-                if (action.equals(EthernetManager.ETHERNET_STATE_CHANGED_ACTION)) {
-                	Log.i("log", "============================"+EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
-                	/*接收到以太网状态改变的广播*/
-                  int state = intent.getIntExtra(EthernetManager.EXTRA_ETHERNET_STATE, 0);
-                  Log.i("log", "-----------------"+state);
-		  getEthInfoFromDhcp(state);
-	        }
+//                if (action.equals(EthernetManager.ETHERNET_STATE_CHANGED_ACTION)) {
+//                	Log.i("log", "============================"+EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
+//                	/*接收到以太网状态改变的广播*/
+//                  int state = intent.getIntExtra(EthernetManager.EXTRA_ETHERNET_STATE, 0);
+//                  Log.i("log", "-----------------"+state);
+//		  getEthInfoFromDhcp(state);
+//	        }
 	    }
 	};
 
 	public void getEthInfoFromDhcp(int state) {
 		Log.i("EthernetDHCPInfoSetting",Thread.currentThread().getStackTrace()[2].getMethodName()+"state="+state);
 		switch (state) {
-		case EthernetManager.ETHER_STATE_CONNECTING:
-			Log.i("log", "+++++++++++++++++"+EthernetManager.ETHER_STATE_CONNECTING);
-			netstate.setText(R.string.dhcp_connecting);
-			dhcpConnecting.setVisibility(View.VISIBLE);
-			dhcpContent.setVisibility(View.GONE);
-			dhcpFailed.setVisibility(View.GONE);
-
-			break;
-		case EthernetManager.ETHER_STATE_DISCONNECTED:
-			/*
-			if (mEthMgr.getEthernetCarrierState() ==0) {
-				netstate.setText(R.string.dhcp_disconnected);
-				dhcpConnecting.setVisibility(View.GONE);
-				dhcpContent.setVisibility(View.GONE);
-				dhcpFailed.setVisibility(View.VISIBLE);
-				return;
-			}*/
-			{
-			netstate.setText(R.string.dhcp_disconnected);
-				dhcpConnecting.setVisibility(View.GONE);
-				dhcpContent.setVisibility(View.GONE);
-				dhcpFailed.setVisibility(View.VISIBLE);
-			this.dhcpStateContent.setText(R.string.dhcp_notconfig);
-			updateNetInfo(true);
-			}
-			break;
-		case EthernetManager.ETHER_STATE_CONNECTED: // 杩炴帴鎴愬姛浠ュ悗锛屽鏋淧PPOE宸茶繛鎺ワ紝闇�瑕佹柇寮�
-			this.dhcpStateContent.setText(R.string.dhcp_state_connected);
-			netstate.setText(R.string.dhcp_connected);
-			dhcpConnecting.setVisibility(View.GONE);
-			dhcpContent.setVisibility(View.VISIBLE);
-			dhcpFailed.setVisibility(View.GONE);
-			updateNetInfo(true);
-/*
-			PppoeManager mPppoeMgr = (PppoeManager) getSystemService(Context.PPPOE_SERVICE);
-			int mPppoeState;
-			mPppoeState = mPppoeMgr.getPppoeState();
-			if (mPppoeState == PppoeManager.PPPOE_STATE_CONNECTED
-					|| mPppoeState == PppoeManager.PPPOE_STATE_CONNECTING) { // 濡傛灉褰撳墠涓鸿繛鎺ョ姸鎬侊紝鎸夐挳涓烘柇寮�
-				mPppoeMgr.stopPppoe();
-			}*/
-			// netDialog("缃戠粶宸茶繛鎺�");
-			break;
+//		case EthernetManager.ETHER_STATE_CONNECTING:
+//			Log.i("log", "+++++++++++++++++"+EthernetManager.ETHER_STATE_CONNECTING);
+//			netstate.setText(R.string.dhcp_connecting);
+//			dhcpConnecting.setVisibility(View.VISIBLE);
+//			dhcpContent.setVisibility(View.GONE);
+//			dhcpFailed.setVisibility(View.GONE);
+//
+//			break;
+//		case EthernetManager.ETHER_STATE_DISCONNECTED:
+//			/*
+//			if (mEthMgr.getEthernetCarrierState() ==0) {
+//				netstate.setText(R.string.dhcp_disconnected);
+//				dhcpConnecting.setVisibility(View.GONE);
+//				dhcpContent.setVisibility(View.GONE);
+//				dhcpFailed.setVisibility(View.VISIBLE);
+//				return;
+//			}*/
+//			{
+//			netstate.setText(R.string.dhcp_disconnected);
+//				dhcpConnecting.setVisibility(View.GONE);
+//				dhcpContent.setVisibility(View.GONE);
+//				dhcpFailed.setVisibility(View.VISIBLE);
+//			this.dhcpStateContent.setText(R.string.dhcp_notconfig);
+//			updateNetInfo(true);
+//			}
+//			break;
+//		case EthernetManager.ETHER_STATE_CONNECTED: // 杩炴帴鎴愬姛浠ュ悗锛屽鏋淧PPOE宸茶繛鎺ワ紝闇�瑕佹柇寮�
+//			this.dhcpStateContent.setText(R.string.dhcp_state_connected);
+//			netstate.setText(R.string.dhcp_connected);
+//			dhcpConnecting.setVisibility(View.GONE);
+//			dhcpContent.setVisibility(View.VISIBLE);
+//			dhcpFailed.setVisibility(View.GONE);
+//			updateNetInfo(true);
+///*
+//			PppoeManager mPppoeMgr = (PppoeManager) getSystemService(Context.PPPOE_SERVICE);
+//			int mPppoeState;
+//			mPppoeState = mPppoeMgr.getPppoeState();
+//			if (mPppoeState == PppoeManager.PPPOE_STATE_CONNECTED
+//					|| mPppoeState == PppoeManager.PPPOE_STATE_CONNECTING) { // 濡傛灉褰撳墠涓鸿繛鎺ョ姸鎬侊紝鎸夐挳涓烘柇寮�
+//				mPppoeMgr.stopPppoe();
+//			}*/
+//			// netDialog("缃戠粶宸茶繛鎺�");
+//			break;
 		}
 	}
 
@@ -145,7 +145,7 @@ public class EthernetDHCPInfoSetting extends FullScreenActivity {
 		setContentView(R.layout.ethernetdhcpinfo_setting);
 		ethernetIP.transContext(this);
 		findView();
-		mIntentFilter = new IntentFilter(EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
+		//mIntentFilter = new IntentFilter(EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
 		mEthMgr = (EthernetManager) getSystemService(Context.ETHERNET_SERVICE);
 	}
 

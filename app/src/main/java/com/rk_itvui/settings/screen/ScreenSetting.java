@@ -116,11 +116,11 @@ public class ScreenSetting {
 		mOutputitemValue[0]= mContext.getString(R.string.default_size);
 		mOutputitemValue[1]= mContext.getString(R.string.origin_size);
 		mSettingItemAddManager = SettingItemAddManager.getInstance();
-		try {
-        	mDisplayManagement = new DisplayOutputManager();
-        }catch (RemoteException doe) {
-            
-        }
+//		try {
+//        	mDisplayManagement = new DisplayOutputManager();
+//        }catch (RemoteException doe) {
+//
+//        }
         //rockchip by huangjc 2014-09-16
         IntentFilter filter = new IntentFilter();
         filter.addAction("android.intent.action.HDMI_PLUGGED");
@@ -165,7 +165,7 @@ public class ScreenSetting {
               LOG("HDMI_PLUGGED state is " + state);
               if(state){
                 Resume();
-                String mode = mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set);
+                String mode = null;//mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set);
                 mMainMode_set = mode;
                 if (mModeDialog != null && mModeDialog.isShowing())
                 	mModeDialog.cancel();
@@ -173,8 +173,8 @@ public class ScreenSetting {
 	        mUIHandler.sendEmptyMessage(1);
                } else {
             	  Log.d("HDMI_PLUGGED state is ","remove");
-            	  SetModeList(mDisplayManagement.MAIN_DISPLAY,1);
-            	  mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,1, true);
+            	  //SetModeList(mDisplayManagement.MAIN_DISPLAY,1);
+            	  //mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,1, true);
             	  Resume();
             	  if (mModeDialog != null && mModeDialog.isShowing())
             		  mModeDialog.cancel();
@@ -217,16 +217,16 @@ public class ScreenSetting {
 	//private String getIfaceTitle(int iface) {
 		public String getIfaceTitle(int iface) {
     	String ifaceTitle = null;
-    	if(iface == mDisplayManagement.DISPLAY_IFACE_LCD)
-    		ifaceTitle =  mContext.getString(R.string.screen_iface_lcd_title);
-    	if(iface == mDisplayManagement.DISPLAY_IFACE_HDMI)
-    		ifaceTitle =  mContext.getString(R.string.screen_iface_hdmi_title);
-		else if(iface == mDisplayManagement.DISPLAY_IFACE_VGA)
-			ifaceTitle = mContext.getString(R.string.screen_iface_vga_title);
-		else if(iface == mDisplayManagement.DISPLAY_IFACE_YPbPr)
-			ifaceTitle = mContext.getString(R.string.screen_iface_ypbpr_title);
-		else if(iface == mDisplayManagement.DISPLAY_IFACE_TV)
-			ifaceTitle = mContext.getString(R.string.screen_iface_tv_title);
+//    	if(iface == mDisplayManagement.DISPLAY_IFACE_LCD)
+//    		ifaceTitle =  mContext.getString(R.string.screen_iface_lcd_title);
+//    	if(iface == mDisplayManagement.DISPLAY_IFACE_HDMI)
+//    		ifaceTitle =  mContext.getString(R.string.screen_iface_hdmi_title);
+//		else if(iface == mDisplayManagement.DISPLAY_IFACE_VGA)
+//			ifaceTitle = mContext.getString(R.string.screen_iface_vga_title);
+//		else if(iface == mDisplayManagement.DISPLAY_IFACE_YPbPr)
+//			ifaceTitle = mContext.getString(R.string.screen_iface_ypbpr_title);
+//		else if(iface == mDisplayManagement.DISPLAY_IFACE_TV)
+//			ifaceTitle = mContext.getString(R.string.screen_iface_tv_title);
     	
     	return ifaceTitle;
     }
@@ -234,33 +234,33 @@ public class ScreenSetting {
 	private void SetModeList(int display, int iface) {
 		LOG("SetModeList display " + display + " iface " + iface);
 		
-    	String[] modelist = mDisplayManagement.getModeList(display, iface);
-                 if(modelist == null)
-                   return;
-
-		CharSequence[] ModeEntries = new CharSequence[modelist.length];
-		CharSequence[] ModeEntryValues = new CharSequence[modelist.length];
-		for(int i = 0; i < modelist.length; i++) {
-			ModeEntries[i] = modelist[i];
-			if(iface == mDisplayManagement.DISPLAY_IFACE_TV) {
-				String mode = modelist[i];
-				if(mode.equals("720x576i-50")) {
-					ModeEntries[i] = "CVBS: PAL";
-				} else if(mode.equals("720x480i-60")) {
-					ModeEntries[i] = "CVBS: NTSC";
-				} else
-					ModeEntries[i] = "YPbPr: " + modelist[i];
-			}
-				
-			ModeEntryValues[i] = modelist[i];
-		}
-		if(display == mDisplayManagement.MAIN_DISPLAY) {
-			mMainModeEntries = ModeEntries;
-			mMainModeValue = ModeEntryValues;
-		} else {
-			mAuxModeEntries = ModeEntries;
-    		mAuxModeValue = ModeEntryValues;
-		}
+//    	String[] modelist = mDisplayManagement.getModeList(display, iface);
+//                 if(modelist == null)
+//                   return;
+//
+//		CharSequence[] ModeEntries = new CharSequence[modelist.length];
+//		CharSequence[] ModeEntryValues = new CharSequence[modelist.length];
+//		for(int i = 0; i < modelist.length; i++) {
+//			ModeEntries[i] = modelist[i];
+//			if(iface == mDisplayManagement.DISPLAY_IFACE_TV) {
+//				String mode = modelist[i];
+//				if(mode.equals("720x576i-50")) {
+//					ModeEntries[i] = "CVBS: PAL";
+//				} else if(mode.equals("720x480i-60")) {
+//					ModeEntries[i] = "CVBS: NTSC";
+//				} else
+//					ModeEntries[i] = "YPbPr: " + modelist[i];
+//			}
+//
+//			ModeEntryValues[i] = modelist[i];
+//		}
+//		if(display == mDisplayManagement.MAIN_DISPLAY) {
+//			mMainModeEntries = ModeEntries;
+//			mMainModeValue = ModeEntryValues;
+//		} else {
+//			mAuxModeEntries = ModeEntries;
+//    		mAuxModeValue = ModeEntryValues;
+//		}
     }
 /*
 	private void RestoreDisplaySetting() {
@@ -297,103 +297,103 @@ public class ScreenSetting {
 		String mode = null;
 		
 		 // Fill main interface list.
-		int[] mainFace = mDisplayManagement.getIfaceList(mDisplayManagement.MAIN_DISPLAY);
-		if(mainFace == null)	return;
-		
-		if(mainFace != null) {
-			IfaceEntries = new CharSequence[mainFace.length];
-			IfaceValue = new CharSequence[mainFace.length];		
-			for(int i = 0; i < mainFace.length; i++) {
-				IfaceEntries[i] = getIfaceTitle(mainFace[i]);
-				IfaceValue[i] = Integer.toString(mainFace[i]);
-			}
-			
-			mMainIfaceEntries = IfaceEntries;
-			mMainIfaceValue = IfaceValue;
-	        // get current main iface
-	        curIface = mDisplayManagement.getCurrentInterface(mDisplayManagement.MAIN_DISPLAY);
-			mMainDisplay_last = curIface;
-			
-//	        mInterface.setValue(Integer.toString(curIface));
-	        String curInterface = getIfaceTitle(curIface);
-//	        mDisplayModeList.setTitle(getIfaceTitle(curIface) + " " + getString(R.string.screen_mode_title));
-	        LOG("cur interface:"+curInterface);
-	        //((RKSettings) mContext).updateSettingItem(R.string.screen_interface, curInterface, null, null);
-	        
-//	        mInterface_last = curIface;
-//	        mInterface_set = mInterface_last;
-//			mInterfaceValue.setTitle(getString(R.string.screen_interface_current) + " " + getIfaceTitle(curIface));
-	        
-	        // Fill display mode list.
-	     	SetModeList(mDisplayManagement.MAIN_DISPLAY,curIface);
-			mode = mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY, curIface);
-			if(mode != null) {
-				mMainMode_last = mode;
-				mMainDisplay_set = mMainDisplay_last;
-				mMainMode_set = mMainMode_last;
-	     	}
-//			if(mode != null)
-//				mDisplayModeList.setValue(mode);
-	     	
-	     	String curMode = null;
-	     	if (mode != null){
-	     		LOG("mode index:"+getModeIndex(mMainModeValue,mode));
-                        if(mMainModeValue!=null && mMainModeValue.length>0)
-	     		curMode = mMainModeEntries[getModeIndex(mMainModeValue,mode)].toString();
-	     	}
-	     	//((RKSettings) mContext).updateSettingItem(R.string.screen_mode_title, curMode, null, null);
-//			mMode_last = mode;
-//			mMode_set = mMode_last;
-			
-		}
-
-		int[] aux_display = mDisplayManagement.getIfaceList(mDisplayManagement.AUX_DISPLAY);
-		if(aux_display != null) {
-			mInterfaceId = mSettingItemAddManager.findID();
-			SettingItem item0 = new SettingItem(1,R.string.screen_settings,mInterfaceId,mContext.getString(R.string.screen_interface)+"1", true);
-			mSettingItemAddManager.addSettingItem("device",item0,R.string.screen_mode_title,true);
-			item0.setOnSettingItemClick(mItemClickListener);
-
-			mModeId = mSettingItemAddManager.findID();
-			SettingItem item1 = new SettingItem(1,R.string.screen_settings,mModeId,mContext.getString(R.string.screen_mode_title)+"1", true);
-			mSettingItemAddManager.addSettingItem("device",item1,mInterfaceId,true);
-			item1.setOnSettingItemClick(mItemClickListener);
-			
-			curIface = mDisplayManagement.getCurrentInterface(mDisplayManagement.AUX_DISPLAY);
-			mAuxDisplay_last = curIface;
-
-			//((RKSettings) mContext).updateSettingItem(mInterfaceId, getIfaceTitle(curIface), null, null);
-	//		mAuxDisplay.setTitle("2nd " + getString(R.string.screen_interface));
-			// Fill aux interface list.
-			IfaceEntries = new CharSequence[aux_display.length];
-			IfaceValue = new CharSequence[aux_display.length];		
-			for(int i = 0; i < aux_display.length; i++) {
-				IfaceEntries[i] = getIfaceTitle(aux_display[i]);
-				IfaceValue[i] = Integer.toString(aux_display[i]);
-			}
-//			mAuxDisplay.setEntries(IfaceEntries);
-//	        mAuxDisplay.setEntryValues(IfaceValue);
-//	        mAuxDisplay.setValue(Integer.toString(curIface));
-			mAuxIfaceEntries = IfaceEntries;
-			mAuxIfaceValue = IfaceValue;
-			// Fill aux display mode list.
-//	        mAuxModeList.setTitle(getIfaceTitle(curIface) + " " + getString(R.string.screen_mode_title));
-			SetModeList(mDisplayManagement.AUX_DISPLAY, curIface);
-			mode = mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY, curIface);
-			if(mode != null) {
-				mAuxMode_last = mode;
-				mAuxDisplay_set = mAuxDisplay_last;
-				mAuxMode_set = mAuxMode_last;
-			}
-
-			String curMode = null;
-	     	if (mode != null){
-	     		LOG("mode index:"+getModeIndex(mAuxModeValue,mode));
-	     		curMode = mAuxModeEntries[getModeIndex(mAuxModeValue,mode)].toString();
-	     	}
-			
-			//((RKSettings) mContext).updateSettingItem(mModeId, curMode, null, null);
-		} 
+//		int[] mainFace = mDisplayManagement.getIfaceList(mDisplayManagement.MAIN_DISPLAY);
+//		if(mainFace == null)	return;
+//
+//		if(mainFace != null) {
+//			IfaceEntries = new CharSequence[mainFace.length];
+//			IfaceValue = new CharSequence[mainFace.length];
+//			for(int i = 0; i < mainFace.length; i++) {
+//				IfaceEntries[i] = getIfaceTitle(mainFace[i]);
+//				IfaceValue[i] = Integer.toString(mainFace[i]);
+//			}
+//
+//			mMainIfaceEntries = IfaceEntries;
+//			mMainIfaceValue = IfaceValue;
+//	        // get current main iface
+//	        curIface = mDisplayManagement.getCurrentInterface(mDisplayManagement.MAIN_DISPLAY);
+//			mMainDisplay_last = curIface;
+//
+////	        mInterface.setValue(Integer.toString(curIface));
+//	        String curInterface = getIfaceTitle(curIface);
+////	        mDisplayModeList.setTitle(getIfaceTitle(curIface) + " " + getString(R.string.screen_mode_title));
+//	        LOG("cur interface:"+curInterface);
+//	        //((RKSettings) mContext).updateSettingItem(R.string.screen_interface, curInterface, null, null);
+//
+////	        mInterface_last = curIface;
+////	        mInterface_set = mInterface_last;
+////			mInterfaceValue.setTitle(getString(R.string.screen_interface_current) + " " + getIfaceTitle(curIface));
+//
+//	        // Fill display mode list.
+//	     	SetModeList(mDisplayManagement.MAIN_DISPLAY,curIface);
+//			mode = mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY, curIface);
+//			if(mode != null) {
+//				mMainMode_last = mode;
+//				mMainDisplay_set = mMainDisplay_last;
+//				mMainMode_set = mMainMode_last;
+//	     	}
+////			if(mode != null)
+////				mDisplayModeList.setValue(mode);
+//
+//	     	String curMode = null;
+//	     	if (mode != null){
+//	     		LOG("mode index:"+getModeIndex(mMainModeValue,mode));
+//                        if(mMainModeValue!=null && mMainModeValue.length>0)
+//	     		curMode = mMainModeEntries[getModeIndex(mMainModeValue,mode)].toString();
+//	     	}
+//	     	//((RKSettings) mContext).updateSettingItem(R.string.screen_mode_title, curMode, null, null);
+////			mMode_last = mode;
+////			mMode_set = mMode_last;
+//
+//		}
+//
+//		int[] aux_display = mDisplayManagement.getIfaceList(mDisplayManagement.AUX_DISPLAY);
+//		if(aux_display != null) {
+//			mInterfaceId = mSettingItemAddManager.findID();
+//			SettingItem item0 = new SettingItem(1,R.string.screen_settings,mInterfaceId,mContext.getString(R.string.screen_interface)+"1", true);
+//			mSettingItemAddManager.addSettingItem("device",item0,R.string.screen_mode_title,true);
+//			item0.setOnSettingItemClick(mItemClickListener);
+//
+//			mModeId = mSettingItemAddManager.findID();
+//			SettingItem item1 = new SettingItem(1,R.string.screen_settings,mModeId,mContext.getString(R.string.screen_mode_title)+"1", true);
+//			mSettingItemAddManager.addSettingItem("device",item1,mInterfaceId,true);
+//			item1.setOnSettingItemClick(mItemClickListener);
+//
+//			curIface = mDisplayManagement.getCurrentInterface(mDisplayManagement.AUX_DISPLAY);
+//			mAuxDisplay_last = curIface;
+//
+//			//((RKSettings) mContext).updateSettingItem(mInterfaceId, getIfaceTitle(curIface), null, null);
+//	//		mAuxDisplay.setTitle("2nd " + getString(R.string.screen_interface));
+//			// Fill aux interface list.
+//			IfaceEntries = new CharSequence[aux_display.length];
+//			IfaceValue = new CharSequence[aux_display.length];
+//			for(int i = 0; i < aux_display.length; i++) {
+//				IfaceEntries[i] = getIfaceTitle(aux_display[i]);
+//				IfaceValue[i] = Integer.toString(aux_display[i]);
+//			}
+////			mAuxDisplay.setEntries(IfaceEntries);
+////	        mAuxDisplay.setEntryValues(IfaceValue);
+////	        mAuxDisplay.setValue(Integer.toString(curIface));
+//			mAuxIfaceEntries = IfaceEntries;
+//			mAuxIfaceValue = IfaceValue;
+//			// Fill aux display mode list.
+////	        mAuxModeList.setTitle(getIfaceTitle(curIface) + " " + getString(R.string.screen_mode_title));
+//			SetModeList(mDisplayManagement.AUX_DISPLAY, curIface);
+//			mode = mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY, curIface);
+//			if(mode != null) {
+//				mAuxMode_last = mode;
+//				mAuxDisplay_set = mAuxDisplay_last;
+//				mAuxMode_set = mAuxMode_last;
+//			}
+//
+//			String curMode = null;
+//	     	if (mode != null){
+//	     		LOG("mode index:"+getModeIndex(mAuxModeValue,mode));
+//	     		curMode = mAuxModeEntries[getModeIndex(mAuxModeValue,mode)].toString();
+//	     	}
+//
+//			//((RKSettings) mContext).updateSettingItem(mModeId, curMode, null, null);
+//		}
 		getCurrentmode();
 		getCurrentiface();
 	}
@@ -421,60 +421,60 @@ public class ScreenSetting {
 	
 	private void RestoreDisplaySetting() {
 		LOG("RestoreDisplaySetting,mMainDisplay_set = "+mMainDisplay_set+",mMainDisplay_last = "+mMainDisplay_last);
-		if( (mMainDisplay_set != mMainDisplay_last) || (mMainMode_last.equals(mMainMode_set) == false) ) 
-		{
-			if(mMainDisplay_set != mMainDisplay_last) 
-			{
-				mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_set, false);
-				LOG("RestoreDisplaySetting(),mMainMode_set = "+mMainMode_set+",mMainDisplay_last = "+mMainDisplay_last);
-				//((RKSettings) mContext).updateSettingItem(R.string.screen_interface, getIfaceTitle(mMainDisplay_last), null, null);
-//				mMainModeList.setTitle(getIfaceTitle(mMainDisplay_last) + " " + getString(R.string.screen_mode_title));
-				// Fill display mode list.
-		     	SetModeList(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last);
-			}
-			String mode;
-			if(mMainMode_last.equals("720x576i-50")) {
-				mode = "PAL";
-			} else if(mMainMode_last.equals("720x480i-60")) {
-				mode = "NTSC";
-			} else
-				mode = mMainMode_last;
-			//((RKSettings) mContext).updateSettingItem(R.string.screen_mode_title, mode, null, null);
-			mDisplayManagement.setMode(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last, mMainMode_last);
-			mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last, true);
-			mMainDisplay_set = mMainDisplay_last;
-			mMainMode_set = mMainMode_last;
-		}
-		if(mDisplayManagement.getDisplayNumber() > 1) {
-			if( (mAuxDisplay_set != mAuxDisplay_last) || (mAuxMode_last.equals(mAuxMode_set) == false) ) {
-				if(mAuxDisplay_set != mAuxDisplay_last) {
-					mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_set, false);
-					//((RKSettings) mContext).updateSettingItem(mInterfaceId, getIfaceTitle(mAuxDisplay_last), null, null);
-//					mAuxDisplay.setValue(Integer.toString(mAuxDisplay_last));
-//					mAuxModeList.setTitle(getIfaceTitle(mAuxDisplay_last) + " " + getString(R.string.screen_mode_title));
-					// Fill display mode list.
-			     	SetModeList(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last);
-				}
-//				mAuxModeList.setValue(mAuxMode_last);
-				String mode;
-				if(mAuxMode_last.equals("720x576i-50")) {
-					mode = "PAL";
-				} else if(mAuxMode_last.equals("720x480i-60")) {
-					mode = "NTSC";
-				} else
-					mode = mAuxMode_last;
-				if(mAuxModeEntries != null && mAuxModeEntries.length > 0 
-							&& (mAuxDisplay_last < mAuxModeEntries.length) && (mAuxDisplay_last >= 0))
-				{
-					//((RKSettings) mContext).updateSettingItem(mModeId, mode, null, null);
-				}
-				mDisplayManagement.setMode(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last, mAuxMode_last);
-				mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last, true);
-				mAuxDisplay_set = mAuxDisplay_last;
-				mAuxMode_set = mAuxMode_last;
-			}
-		}
-		mUIHandler.sendEmptyMessage(SettingMacroDefine.upDateListView);
+//		if( (mMainDisplay_set != mMainDisplay_last) || (mMainMode_last.equals(mMainMode_set) == false) )
+//		{
+//			if(mMainDisplay_set != mMainDisplay_last)
+//			{
+//				mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_set, false);
+//				LOG("RestoreDisplaySetting(),mMainMode_set = "+mMainMode_set+",mMainDisplay_last = "+mMainDisplay_last);
+//				//((RKSettings) mContext).updateSettingItem(R.string.screen_interface, getIfaceTitle(mMainDisplay_last), null, null);
+////				mMainModeList.setTitle(getIfaceTitle(mMainDisplay_last) + " " + getString(R.string.screen_mode_title));
+//				// Fill display mode list.
+//		     	SetModeList(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last);
+//			}
+//			String mode;
+//			if(mMainMode_last.equals("720x576i-50")) {
+//				mode = "PAL";
+//			} else if(mMainMode_last.equals("720x480i-60")) {
+//				mode = "NTSC";
+//			} else
+//				mode = mMainMode_last;
+//			//((RKSettings) mContext).updateSettingItem(R.string.screen_mode_title, mode, null, null);
+//			mDisplayManagement.setMode(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last, mMainMode_last);
+//			mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY, mMainDisplay_last, true);
+//			mMainDisplay_set = mMainDisplay_last;
+//			mMainMode_set = mMainMode_last;
+//		}
+//		if(mDisplayManagement.getDisplayNumber() > 1) {
+//			if( (mAuxDisplay_set != mAuxDisplay_last) || (mAuxMode_last.equals(mAuxMode_set) == false) ) {
+//				if(mAuxDisplay_set != mAuxDisplay_last) {
+//					mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_set, false);
+//					//((RKSettings) mContext).updateSettingItem(mInterfaceId, getIfaceTitle(mAuxDisplay_last), null, null);
+////					mAuxDisplay.setValue(Integer.toString(mAuxDisplay_last));
+////					mAuxModeList.setTitle(getIfaceTitle(mAuxDisplay_last) + " " + getString(R.string.screen_mode_title));
+//					// Fill display mode list.
+//			     	SetModeList(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last);
+//				}
+////				mAuxModeList.setValue(mAuxMode_last);
+//				String mode;
+//				if(mAuxMode_last.equals("720x576i-50")) {
+//					mode = "PAL";
+//				} else if(mAuxMode_last.equals("720x480i-60")) {
+//					mode = "NTSC";
+//				} else
+//					mode = mAuxMode_last;
+//				if(mAuxModeEntries != null && mAuxModeEntries.length > 0
+//							&& (mAuxDisplay_last < mAuxModeEntries.length) && (mAuxDisplay_last >= 0))
+//				{
+//					//((RKSettings) mContext).updateSettingItem(mModeId, mode, null, null);
+//				}
+//				mDisplayManagement.setMode(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last, mAuxMode_last);
+//				mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY, mAuxDisplay_last, true);
+//				mAuxDisplay_set = mAuxDisplay_last;
+//				mAuxMode_set = mAuxMode_last;
+//			}
+//		}
+//		mUIHandler.sendEmptyMessage(SettingMacroDefine.upDateListView);
 	}
 	
 	public void Pause(){
@@ -535,7 +535,7 @@ public class ScreenSetting {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				// Keep display setting
 				mTime = -1;
-				mDisplayManagement.saveConfig();
+				//mDisplayManagement.saveConfig();
 				mMainDisplay_last = mMainDisplay_set;
 				mMainMode_last = mMainMode_set;
 
@@ -563,8 +563,8 @@ public class ScreenSetting {
 	        	LOG("InitIfaceDialog(),mMainDisplay_set = "+mMainDisplay_set);
 	        	//((RKSettings) mContext).updateSettingItem(R.string.screen_interface, mMainIfaceEntries[which].toString(), null, null);
 //	        	mDisplayModeList.setTitle(getIfaceTitle(iface) + " " + getString(R.string.screen_mode_title));
-	        	SetModeList(mDisplayManagement.MAIN_DISPLAY,iface);
-	        	String mode = mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,iface);
+	        	//SetModeList(mDisplayManagement.MAIN_DISPLAY,iface);
+	        	String mode = null;// mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,iface);
 	        	String curMode = null;
 	        	if(mode != null) {
 	        		LOG("mode index:"+getModeIndex(mMainModeValue,mode));
@@ -619,13 +619,13 @@ public class ScreenSetting {
 				LOG("mMainDisplay_set = "+mMainDisplay_set+",mMainDisplay_last = "+mMainDisplay_last);
 				LOG("mMainMode_set = "+mMainMode_set+",mMainMode_last = "+mMainMode_last);
 	        	if( (mMainDisplay_set != mMainDisplay_last) || (mMainMode_last.equals(mMainMode_set) == false) ) {
-	        		if(mMainDisplay_set != mMainDisplay_last) {
-	        			mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_last, false);
-	             		mTime = 30;
-	        		} else
-	             		mTime = 15;
-	        		mDisplayManagement.setMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set, mMainMode_set);
-	        		mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set, true);
+//	        		if(mMainDisplay_set != mMainDisplay_last) {
+//	        			mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_last, false);
+//	             		mTime = 30;
+//	        		} else
+//	             		mTime = 15;
+//	        		mDisplayManagement.setMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set, mMainMode_set);
+//	        		mDisplayManagement.setInterface(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set, true);
 	        		if (mDialog == null){
 	        			InitDialog(mContext);
 	        		}
@@ -646,14 +646,14 @@ public class ScreenSetting {
 	        	mModeDialog.cancel();
 			}
 		};
-		String mode = mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set);
+		String mode = null;// mDisplayManagement.getCurrentMode(mDisplayManagement.MAIN_DISPLAY,mMainDisplay_set);
 		mMainMode_set = mode;
 		LOG("mMainMode_set = "+mMainMode_set+",mMainDisplay_set = "+mMainDisplay_set+",mMainDisplay_last = "+mMainDisplay_last);
 		String mode_resolution=null;
-		if(mMainDisplay_set == mDisplayManagement.DISPLAY_IFACE_HDMI)
-			mode_resolution =  mContext.getString(R.string.Resolution);
-		else if(mMainDisplay_set == mDisplayManagement.DISPLAY_IFACE_TV)
-			mode_resolution = mContext.getString(R.string.screen_mode_title);
+//		if(mMainDisplay_set == mDisplayManagement.DISPLAY_IFACE_HDMI)
+//			mode_resolution =  mContext.getString(R.string.Resolution);
+//		else if(mMainDisplay_set == mDisplayManagement.DISPLAY_IFACE_TV)
+//			mode_resolution = mContext.getString(R.string.screen_mode_title);
 		TextView title = new TextView(mContext);
 		title.setText(mode_resolution);
 		title.setPadding(10, 10, 10, 10);
@@ -700,8 +700,8 @@ public class ScreenSetting {
 	        	mAuxDisplay_set = iface;
 	        	//((RKSettings) mContext).updateSettingItem(mInterfaceId, mAuxIfaceEntries[which].toString(), null, null);
 //	        	mDisplayModeList.setTitle(getIfaceTitle(iface) + " " + getString(R.string.screen_mode_title));
-	        	SetModeList(mDisplayManagement.AUX_DISPLAY,iface);
-	        	String mode = mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY,iface);
+	        	//SetModeList(mDisplayManagement.AUX_DISPLAY,iface);
+	        	String mode = null;//mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY,iface);
 	        	String curMode = null;
 	        	if(mode != null) {
 	        		LOG("mode index:"+getModeIndex(mAuxModeValue,mode));
@@ -752,13 +752,13 @@ public class ScreenSetting {
 	        	mAuxMode_set = mode;
 	        	LOG("mode:"+mAuxMode_set);
 	        	if( (mAuxDisplay_set != mAuxDisplay_last) || (mAuxMode_last.equals(mAuxMode_set) == false) ) {
-	        		if(mAuxDisplay_set != mAuxDisplay_last) {
-	        			mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_last, false);
-	             		mTime = 30;
-	        		} else
-	             		mTime = 15;
-	        		mDisplayManagement.setMode(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set, mAuxMode_set);
-	        		mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set, true);
+//	        		if(mAuxDisplay_set != mAuxDisplay_last) {
+//	        			mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_last, false);
+//	             		mTime = 30;
+//	        		} else
+//	             		mTime = 15;
+//	        		mDisplayManagement.setMode(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set, mAuxMode_set);
+//	        		mDisplayManagement.setInterface(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set, true);
 	        		if (mDialog == null){
 	        			InitDialog(mContext);
 	        		}
@@ -778,7 +778,7 @@ public class ScreenSetting {
 	        	mAuxModeDialog.cancel();
 			}
 		};
-		String mode = mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set);
+		String mode = null;//mDisplayManagement.getCurrentMode(mDisplayManagement.AUX_DISPLAY,mAuxDisplay_set);
 		mAuxMode_set = mode;
 		LOG("mAuxMode_set = " + mAuxMode_set + ",mAuxDisplay_set = " + mAuxDisplay_set + ",mAuxnDisplay_last = "+mAuxDisplay_last);
 		mAuxModeDialog = new AlertDialog.Builder(mContext).setTitle(R.string.screen_mode_title)

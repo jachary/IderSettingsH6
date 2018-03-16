@@ -721,9 +721,10 @@ public class Wifi_Dialog extends AlertDialog implements View.OnClickListener,
 	}
 
 	private void loadCertificates(Spinner spinner, String prefix) {
-		String[] certs = KeyStore.getInstance().saw(prefix,
+		String[] certs = null;
+				/*KeyStore.getInstance().saw(prefix,
 				//android.os.Process.WIFI_UID);
-                1010);
+                1010);*/
 		Context context = getContext();
 		String unspecified = context.getString(R.string.wifi_unspecified);
 

@@ -81,10 +81,10 @@ public class EthernetIP {
         Log.d(TAG, s);
     }
     /*-------------------------------------------------------*/
-    private String[] mSettingNames = { System.ETHERNET_STATIC_IP,
-        System.ETHERNET_STATIC_GATEWAY, System.ETHERNET_STATIC_NETMASK,
-        System.ETHERNET_STATIC_DNS1, System.ETHERNET_STATIC_DNS2 
-    };
+//    private String[] mSettingNames = { System.ETHERNET_STATIC_IP,
+//        System.ETHERNET_STATIC_GATEWAY, System.ETHERNET_STATIC_NETMASK,
+//        System.ETHERNET_STATIC_DNS1, System.ETHERNET_STATIC_DNS2
+//    };
 
 	/*-------------------------------------------------------*/
     public boolean isUsingStaticIp() {
@@ -151,21 +151,23 @@ public class EthernetIP {
 	 * 閼惧嘲褰嘔P閸︽澘娼� ipType==0:閼惧嘲褰囬惃鍕Ц闂堟瑦锟戒浮P ipType==1:閼惧嘲褰囬惃鍕ЦDHCP閸︽澘娼� ipType缁涘绨崗鏈电铂閿涘矂顣╅悾锟�
 	 */
 	public String getIPAddress(char ipType) {
-		Log.d("getIPAddress", System.getString(contentResolver, System.ETHERNET_STATIC_IP)+  SystemProperties.get("dhcp." + mIface + ".ipaddress"));
-		if (ipType == 0) { // 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
-			return System.getString(contentResolver, System.ETHERNET_STATIC_IP);
-		} else if (ipType == 1) {// 閸斻劍锟戒浮P閸︽澘娼�
-			Log.i("MyNetUtil", "...."+MyNetUtil.getHostIP());
-			return MyNetUtil.getHostIP();
-		} else {
-			return null;
-		}
+		//Log.d("getIPAddress", System.getString(contentResolver, System.ETHERNET_STATIC_IP)+  SystemProperties.get("dhcp." + mIface + ".ipaddress"));
+//		if (ipType == 0) { // 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
+//			return System.getString(contentResolver, System.ETHERNET_STATIC_IP);
+//		} else if (ipType == 1) {// 閸斻劍锟戒浮P閸︽澘娼�
+//			Log.i("MyNetUtil", "...."+MyNetUtil.getHostIP());
+//			return MyNetUtil.getHostIP();
+//		} else {
+//			return null;
+//		}
+		return null;
 	}
 
 	public String getGateWay(char ipType) {
 		if (ipType == 0) {// 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
-			return System.getString(contentResolver,
-					System.ETHERNET_STATIC_GATEWAY);
+			return null;
+					//System.getString(contentResolver,
+					//System.ETHERNET_STATIC_GATEWAY);
 		} else if (ipType == 1) {// 閸斻劍锟戒浮P閸︽澘娼�
 			return SystemProperties.get("dhcp." + mIface + ".gateway");
 		} else {
@@ -175,8 +177,9 @@ public class EthernetIP {
 
 	public String getNetMask(char ipType) {
 		if (ipType == 0) {// 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
-			return System.getString(contentResolver,
-					System.ETHERNET_STATIC_NETMASK);
+			return null ;
+			//System.getString(contentResolver,
+				//	System.ETHERNET_STATIC_NETMASK);
 		} else if (ipType == 1) {// 閸斻劍锟戒浮P閸︽澘娼�
 			return SystemProperties.get("dhcp." + mIface + ".mask");
 		} else {
@@ -186,8 +189,8 @@ public class EthernetIP {
 
 	public String getDNS1(char ipType) {
 		if (ipType == 0) {// 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
-			return System.getString(contentResolver,
-					System.ETHERNET_STATIC_DNS1);
+			return null ;/*System.getString(contentResolver,
+					System.ETHERNET_STATIC_DNS1);*/
 		} else if (ipType == 1) {// 閸斻劍锟戒浮P閸︽澘娼�
 			return SystemProperties.get("dhcp." + mIface + ".dns1");
 
@@ -198,8 +201,8 @@ public class EthernetIP {
 
 	public String getDNS2(char ipType) {
 		if (ipType == 0) {// 婵″倹鐏夌拋鍓х枂閻ㄥ嫰娼ら幀涓
-			return System.getString(contentResolver,
-					System.ETHERNET_STATIC_DNS2);
+			return null ;/*System.getString(contentResolver,
+					System.ETHERNET_STATIC_DNS2);*/
 		} else if (ipType == 1) { // 閸斻劍锟戒浮P閸︽澘娼�
 			return SystemProperties.get("dhcp." + mIface + ".dns2");
 		} else {
@@ -231,8 +234,8 @@ public class EthernetIP {
 
 	public boolean setIPAddress(String value) {
 		if (isValidIpAddress(value)) { // 婵″倹鐏塈P閸︽澘娼冨锝団�橀敍灞藉灟娣囨繂鐡�
-			System.putString(contentResolver, System.ETHERNET_STATIC_IP, value);
-                        mEthIpAddress=value;
+//			System.putString(contentResolver, System.ETHERNET_STATIC_IP, value);
+//                        mEthIpAddress=value;
 			return true;
 		} else {
 			return false;
@@ -242,9 +245,9 @@ public class EthernetIP {
 
 	public boolean setGateWay(String value) {
 		if (isValidIpAddress(value)) {
-			System.putString(contentResolver, System.ETHERNET_STATIC_GATEWAY,
-					value);
-                        mEthGateway=value;
+//			System.putString(contentResolver, System.ETHERNET_STATIC_GATEWAY,
+//					value);
+//                        mEthGateway=value;
 			return true;
 		} else {
 			return false;
@@ -254,9 +257,9 @@ public class EthernetIP {
 
 	public boolean setNetMask(String value) {
 		if (isValidIpAddress(value)) {
-			System.putString(contentResolver, System.ETHERNET_STATIC_NETMASK,
-					value);
-                        mEthNetmask=value;
+//			System.putString(contentResolver, System.ETHERNET_STATIC_NETMASK,
+//					value);
+//                        mEthNetmask=value;
 			return true;
 		} else {
 			return false;
@@ -265,9 +268,9 @@ public class EthernetIP {
 
 	public boolean setDNS1(String value) {
 		if (isValidIpAddress(value)) {
-			System.putString(contentResolver, System.ETHERNET_STATIC_DNS1,
-					value);
-                        mEthdns1=value;
+//			System.putString(contentResolver, System.ETHERNET_STATIC_DNS1,
+//					value);
+//                        mEthdns1=value;
 			return true;
 		} else {
 			return false;
@@ -276,9 +279,9 @@ public class EthernetIP {
 
 	public boolean setDNS2(String value) {
 		if (isValidIpAddress(value)) {
-			System.putString(contentResolver, System.ETHERNET_STATIC_DNS2,
-					value);
-                        mEthdns2=value;
+//			System.putString(contentResolver, System.ETHERNET_STATIC_DNS2,
+//					value);
+//                        mEthdns2=value;
 			return true;
 		} else {
 			return false;

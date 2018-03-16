@@ -24,8 +24,8 @@ allprojects {
 //            options.compilerArgs.add('-Xbootclasspath/p:app/libs/classesext.jar')
 //            options.compilerArgs.add('-Xbootclasspath/p:app/libs/framework.jar')
 //            options.compilerArgs.add('-Xbootclasspath/p:app/libs/ext.jar')
-            options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/classes.jar')
-//            options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/classes-full-debug-rk.jar')
+  //          options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/classes.jar')
+           options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/classes-full-debug.jar')
             //options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/classesext.jar')
 //            options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/framework.jar')
 //            options.compilerArgs.add('-Xbootclasspath/p:/Users/guoliang.wgl/AndroidStudioProjects/IderSettingsH6/app/libs/ext.jar')ptions.compilerArgs.ad

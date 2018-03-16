@@ -107,7 +107,7 @@ public class AudioCommon {
 			mAudioManager = (AudioManager) ctx
 					.getSystemService(Context.AUDIO_SERVICE);
 
-		mAudioManager.setWiredDeviceConnectionState(device, state, "");
+		//mAudioManager.setWiredDeviceConnectionState(device, state, "");
 
 	}
 

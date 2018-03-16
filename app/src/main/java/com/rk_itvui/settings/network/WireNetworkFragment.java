@@ -47,8 +47,8 @@ public class WireNetworkFragment extends Fragment {
 	private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			int state = intent.getIntExtra(
-					EthernetManager.EXTRA_ETHERNET_STATE, 0);
+//			int state = intent.getIntExtra(
+//					EthernetManager.EXTRA_ETHERNET_STATE, 0);
 			checkNetMode();
 		}
 	};
@@ -72,9 +72,10 @@ public class WireNetworkFragment extends Fragment {
 			Bundle savedInstanceState) {
 		wirenetworksettingLayout = inflater.inflate(
 				R.layout.wirenetwork_fragment, container, false);
+		mIntentFilter = new IntentFilter();
 
-		mIntentFilter = new IntentFilter(
-				EthernetManager.ETHERNET_STATE_CHANGED_ACTION); 
+//		mIntentFilter = new IntentFilter(
+//				EthernetManager.ETHERNET_STATE_CHANGED_ACTION);
 		mIntentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE"); 
 		mIntentFilter.addAction("android.net.wifi.RSSI_CHANGED"); 
 		mIntentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION); 
