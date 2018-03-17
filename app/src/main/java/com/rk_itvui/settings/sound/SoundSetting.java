@@ -103,13 +103,13 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 		
 
 		
-        map_SoundDeviceManager.put("SoundSettingIcon",R.drawable.sound_device_icon);
-		map_SoundDeviceManager.put("SoundSettingItem", getString(R.string.audio_device));
-        UpdateAudioDeviceDisplay();
-
-        map_DolbySetting.put("SoundSettingIcon",R.drawable.dolby_icon);
-		map_DolbySetting.put("SoundSettingItem", getString(R.string.dolby_setting));
-		map_DolbySetting.put("SoundSettingStatus",getString(R.string.DolbySettingStatus));
+//        map_SoundDeviceManager.put("SoundSettingIcon",R.drawable.sound_device_icon);
+//		map_SoundDeviceManager.put("SoundSettingItem", getString(R.string.audio_device));
+//        UpdateAudioDeviceDisplay();
+//
+//        map_DolbySetting.put("SoundSettingIcon",R.drawable.dolby_icon);
+//		map_DolbySetting.put("SoundSettingItem", getString(R.string.dolby_setting));
+//		map_DolbySetting.put("SoundSettingStatus",getString(R.string.DolbySettingStatus));
 
 
 
@@ -148,8 +148,8 @@ public class SoundSetting extends FullScreenPreferenceActivity implements OnItem
 //		}
 		listItem.add(map_VolumeSetting);
 		listItem.add(map_Audioout);
-		listItem.add(map_SoundDeviceManager);
-		listItem.add(map_DolbySetting);
+//		listItem.add(map_SoundDeviceManager);
+//		listItem.add(map_DolbySetting);
 		
 		//listItem.add(map_DtsSetting);
 		//listItem.add(map_PressVoice);
