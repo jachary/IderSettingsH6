@@ -49,9 +49,9 @@
 
     <!-- Sound Settings -->
 
-    <string name="sound_setting_title"> Sound Settings</string>
+    <string name="sound_setting_title">  声音设置</string>
     <string name="time_picker_title">Time</string>
-    <string name="volume_setting">Volume settings</string>
+    <string name="volume_setting">音量调节</string>
     <string name="audio_device">Audio Device</string>
     <string name="dolby_setting">Dolby settings</string>
     <string name="DTS_setting">DTS  settings</string>
