@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+
+    <string name="display_support_type_title">修改提示</string>
+    <string name="display_support_type">当前电视HDMI输出模式不支持</string>
   
     <string name="netinfo">网络信息</string>
     <string name="wireless">无线网络</string>
@@ -4198,7 +4202,7 @@ found in the list of installed apps.</string>
 
     <!-- Screen settings screen, section header for settings related to display output screen -->
     <string name="screen_settings">Screen</string>
-    <string name="screen_interface">Interface</string>
+    <string name="screen_interface">分辨率</string>
     <string name="screen_iface_lcd_title">LCD</string>
     <string name="screen_iface_hdmi_title">HDMI</string>
     <string name="screen_iface_vga_title">VGA</string>
