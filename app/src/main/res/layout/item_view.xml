@@ -440,7 +440,8 @@
             android:layout_height="110dp"
  	      android:layout_marginTop="@dimen/viewpager_item_padding_tp"
  	      android:layout_marginLeft="16dp"
-          android:layout_toRightOf="@id/view_item3"
+          android:layout_below="@id/view_item4"
+          android:visibility="gone"
  	      android:background="@drawable/folder_sinatv_paly"
  	      android:orientation="vertical"
  	      android:padding="@dimen/viewpager_item_padding" >
@@ -449,6 +450,7 @@
                 android:id="@+id/view_bg10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 android:orientation="vertical" >
 
                 <ImageView
