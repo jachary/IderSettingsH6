@@ -1281,7 +1281,8 @@
 		
 		<item>App Manage</item>	
 		<item>Developer</item>
-		<item>More Settings</item>		
+		<item>More Settings</item>
+        <item>BlueTooth Settings</item>
 	</string-array>
 		<!-- by blb-->
 <!-- Phase 2 options for PEAP -->

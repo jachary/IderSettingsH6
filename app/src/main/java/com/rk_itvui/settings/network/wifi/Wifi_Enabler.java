@@ -114,12 +114,12 @@ public class Wifi_Enabler  {
 	public void onWiFiClick()
 	{
 		boolean enable = !mOpen;
-		int wifiApState = mWifiManager.getWifiApState();
-        if (enable && ((wifiApState == WifiManager.WIFI_AP_STATE_ENABLING) ||
-                (wifiApState == WifiManager.WIFI_AP_STATE_ENABLED))) 
-        {
-            mWifiManager.setWifiApEnabled(null, false);
-        }
+//		int wifiApState = mWifiManager.getWifiApState();
+//        if (enable && ((wifiApState == WifiManager.WIFI_AP_STATE_ENABLING) ||
+//                (wifiApState == WifiManager.WIFI_AP_STATE_ENABLED)))
+//        {
+//            mWifiManager.setWifiApEnabled(null, false);
+//        }
 
 		if(mWifiManager.setWifiEnabled(enable))
 		{

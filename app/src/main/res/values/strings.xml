@@ -4291,6 +4291,7 @@ found in the list of installed apps.</string>
     <string name="save_sucess">Static IP save success</string>
     <string name="sys_update">System Update</string>
 	<string name="ethernet">Ethernet</string>
+
 	<string name="wifi_ap_close_content">Open the Wireless AP in order to share the connected network</string>
 	    <string name ="wifi_ap_open_content">The wifi AP is opening...</string>
 	<string name="wifi_list_closed">Please Open the Wi-Fi in order to use the Wi-Fi</string>

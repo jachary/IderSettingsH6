@@ -17,6 +17,8 @@ android:sharedUserId="android.uid.system"
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!--<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />-->
  <!--<uses-permission android:name="android.permission.SET_TIME" />-->
     <supports-screens
@@ -42,6 +44,25 @@ android:sharedUserId="android.uid.system"
 	<!-- Network settings -->
         <activity
             android:name="com.rk_itvui.settings.network_settingnew"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Network settings -->
+        <activity
+            android:name="com.rk_itvui.settings.BlueToothSettings"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.rk_itvui.settings.BlueToothItem"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -369,6 +390,7 @@ android:sharedUserId="android.uid.system"
 
                   >
         </activity>
+        <activity android:name="com.rk_itvui.settings.bluetooth_test"/>
     </application>
 
 </manifest>

@@ -95,10 +95,10 @@ public class Settings extends Activity {
 	private ContentResolver mContentResolver;
 	private Handler mViewPageHandler;
 	//the count of each page 
-	private final int COUNT_PER_PAGE = 11;
+	private final int COUNT_PER_PAGE = 12;
 
 	//the count of settings2 items
-	private final int COUNT_PER_iTEMS = 11;
+	private final int COUNT_PER_iTEMS = 12;
 	
 	private PageIndicator mPageIndicator;
 	private long mCurrentFocusPosition;
@@ -127,6 +127,7 @@ public class Settings extends Activity {
 	private final static int APP_MANERGE = 8;
 	private final static int DEVELOPER_SETTINGS = 9;
 	private final static int MORE_SETTING = 10;
+	private final static int BLUETOOTH_SETTING = 11;
 	/*application manager*/
 	ApplicationSetting mApplicationSetting = null;
 	//focus img
@@ -308,10 +309,15 @@ public class Settings extends Activity {
 			startIntentWithTranlete(Settings.this,intentstore);
 			break;
 		case MORE_SETTING:
-//			Intent intent_duoping = new Intent(Settings.this, PersonalSetting.class);
-//			startActivity(intent_duoping);
+			Intent intent_duoping = new Intent(Settings.this, PersonalSetting.class);
+			startActivity(intent_duoping);
 			Intent intent_more = new Intent("android.settings.SETTINGS");
 			startActivity(intent_more);
+			break;
+        case BLUETOOTH_SETTING:
+			Log.d(TAG,"BLUETOOTH_SETTING");
+            Intent intent = new Intent(Settings.this, BlueToothItem.class);
+            startIntentWithTranlete(Settings.this,intent);
 			break;
 		case DEVICES_MESSAGE:
 			Intent intentdevices = new Intent(Settings.this, Deviceversion.class);
@@ -483,7 +489,7 @@ public class Settings extends Activity {
 				R.drawable.zxy_sound, R.drawable.zxy_diplay,
 				R.drawable.zxy_flash, R.drawable.zxy_ime,
 				 R.drawable.zxy_info, R.drawable.zxy_factory,
-				 R.drawable.zxy_appmanager,R.drawable.zxy_developer,R.drawable.zxy_more};
+				 R.drawable.zxy_appmanager,R.drawable.zxy_developer,R.drawable.zxy_more,R.drawable.zxy_more};
 
 		class ViewItemHolder {
 			int position;
@@ -528,7 +534,10 @@ public class Settings extends Activity {
 					.findViewById(R.id.view_item9);
 			vh.mLayoutItems[10] = (LinearLayout) view
 					.findViewById(R.id.view_item10);
-			
+
+			vh.mLayoutItems[11] = (LinearLayout) view
+					.findViewById(R.id.view_item11);
+
 
 			vh.mBgItems[0] = (LinearLayout) view.findViewById(R.id.view_bg0);
 			vh.mBgItems[1] = (LinearLayout) view.findViewById(R.id.view_bg1);
@@ -541,6 +550,7 @@ public class Settings extends Activity {
 			vh.mBgItems[8] = (LinearLayout) view.findViewById(R.id.view_bg8);
 			vh.mBgItems[9] = (LinearLayout) view.findViewById(R.id.view_bg9);
 			vh.mBgItems[10] = (LinearLayout) view.findViewById(R.id.view_bg10);
+			vh.mBgItems[11] = (LinearLayout) view.findViewById(R.id.view_bg11);
 
 			vh.mImageItems[0] = (ImageView) view
 					.findViewById(R.id.item_imageview0);
@@ -564,6 +574,8 @@ public class Settings extends Activity {
 					.findViewById(R.id.item_imageview9);
 			vh.mImageItems[10] = (ImageView) view
 					.findViewById(R.id.item_imageview10);
+			vh.mImageItems[11] = (ImageView) view
+					.findViewById(R.id.item_imageview11);
 
 			vh.mTextItems[0] = (AlwaysMarqueeTextView) view
 					.findViewById(R.id.item_textview0);
@@ -587,6 +599,8 @@ public class Settings extends Activity {
 					.findViewById(R.id.item_textview9);
 			vh.mTextItems[10] = (AlwaysMarqueeTextView) view
 					.findViewById(R.id.item_textview10);
+			vh.mTextItems[11] = (AlwaysMarqueeTextView) view
+					.findViewById(R.id.item_textview11);
 
 			for (LinearLayout v : vh.mLayoutItems) {
 				v.setOnClickListener(mOnClickListener);
@@ -776,6 +790,11 @@ public class Settings extends Activity {
 				case R.id.view_item10:
 					focusposition = 10;
 					break;
+                case R.id.view_item11:
+					focusposition =11 ;
+					break;
+					default:
+						break;
 				}
 				if (hasFocus) {
 					ViewItemHolder holder = (ViewItemHolder) mFocusView
