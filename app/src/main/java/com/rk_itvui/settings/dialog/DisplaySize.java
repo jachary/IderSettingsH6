@@ -34,7 +34,7 @@ public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeList
 		int dispType = mDisplayManager.getDisplayOutputType(Display.TYPE_BUILT_IN);
 		if(dispType == DisplayOutputManager.DISPLAY_OUTPUT_TYPE_HDMI){
 			MAXIMUM_VALUE = 100;
-			MINIMUM_VALUE = 95;
+			MINIMUM_VALUE = 80;
 		} else if(dispType == DisplayOutputManager.DISPLAY_OUTPUT_TYPE_TV){
 			MAXIMUM_VALUE = 100;
 			MINIMUM_VALUE = 90;
@@ -44,7 +44,7 @@ public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeList
 		mSeekBar.setMax(MAXIMUM_VALUE - MINIMUM_VALUE);
 		OldValue = getDisplayPercent();
 		mSeekBar.setProgress(OldValue - MINIMUM_VALUE);
-		mTextView.setText((MAXIMUM_VALUE - MINIMUM_VALUE)*100/(OldValue - MINIMUM_VALUE)+"%");
+		mTextView.setText( OldValue+"%");
 		mSeekBar.setOnSeekBarChangeListener(this);
 	}
 
