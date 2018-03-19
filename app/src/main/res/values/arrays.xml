@@ -1270,19 +1270,34 @@
 <!--$_rbox_$_modify_$_end <item>Personal</item>	<item>System Update</item>	-->
 
 	<string-array name="settings_items" translatable="false">
-		<item>Network</item>
-		<item>Time And Date</item>
-		<item>Sound</item>
-		<item>Display</item>	
-		<item>Storage</item>	
-		<item>Language</item>	
-		<item>Device Info</item>	
-		<item>Factory Reset</item>	
-		
-		<item>App Manage</item>	
-		<item>Developer</item>
-		<item>More Settings</item>
-        <item>BlueTooth Settings</item>
+        <item>网络设置</item>
+        <item>时间和日期</item>
+        <item>声音设置</item>
+        <item>显示设置</item>
+        <item>存储信息</item>
+        <item>语言和输入法</item>
+
+        <item>设备信息</item>
+        <item>恢复出厂设置</item>
+
+        <item>应用管理</item>
+        <item>开发者选项</item>
+        <item>更多设置</item>
+        <item>蓝牙设置</item>
+
+		<!--<item>Network</item>-->
+		<!--<item>Time And Date</item>-->
+		<!--<item>Sound</item>-->
+		<!--<item>Display</item>	-->
+		<!--<item>Storage</item>	-->
+		<!--<item>Language</item>	-->
+		<!--<item>Device Info</item>	-->
+		<!--<item>Factory Reset</item>	-->
+		<!---->
+		<!--<item>App Manage</item>	-->
+		<!--<item>Developer</item>-->
+		<!--<item>More Settings</item>-->
+        <!--<item>BlueTooth Settings</item>-->
 	</string-array>
 		<!-- by blb-->
 <!-- Phase 2 options for PEAP -->

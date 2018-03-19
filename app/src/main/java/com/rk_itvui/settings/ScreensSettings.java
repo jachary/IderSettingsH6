@@ -29,6 +29,7 @@ import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.hardware.display.DisplayManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.DisplayOutputManager;
 import android.os.Handler;
@@ -54,6 +55,8 @@ public  class ScreensSettings extends FullScreenPreferenceActivity implements On
 	private String TAG = "Settings2" ;
 	private String SubTAG = "--ScreensSettings:" ;
 	private DisplayOutputManager mDisplayManager;
+	private static final int FALLBACK_DISPLAY_MODE_TIMEOUT = 10;
+	private static final int DLG_RESOLUTION_CHANGE_WARNING = 11;
 	
 	private String setiface , setmode;
 	private String iface , vediomode , size ;
@@ -61,6 +64,7 @@ public  class ScreensSettings extends FullScreenPreferenceActivity implements On
 	private int HDMI_TV = -1;
 	private int format = 0;
 	private String oldValue;
+	private String newValue;
 	private boolean isSameMode;
 	private boolean isSupport = false;
 	private boolean dialogTipsFlag;
@@ -353,10 +357,13 @@ public void showDisplayDialog(){
 			//switchDispFormat(mode_entries[which]);
 
 			Log.d(TAG,SubTAG + "oldValue is :" + oldValue +"checked value is :" + mode_value[which]);
+			newValue = mode_value[which];
 			isSameMode = oldValue.equals(mode_value[which]);
 			if(isSameMode)
 				return ;
 			switchDispFormat(mode_value[which]+"");
+			//// TODO: 18/3/19 request user dialog
+			showDialog(DLG_RESOLUTION_CHANGE_WARNING);
 		}
 	})
 	.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -464,5 +471,64 @@ public void showDisplayDialog(){
 		} catch (NumberFormatException e) {
 			Log.w(TAG, "Invalid display output format!");
 		}
+	}
+
+	@Override
+	public Dialog onCreateDialog(int dialogId) {
+		if (DLG_RESOLUTION_CHANGE_WARNING == dialogId) {
+			OnClickListener listener = new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int btn) {
+					if (btn == AlertDialog.BUTTON_POSITIVE) {
+						switchDispFormat(newValue);
+					} else if (btn == AlertDialog.BUTTON_NEGATIVE) {
+						switchDispFormat(oldValue);
+					}
+					dialog.dismiss();
+				}
+			};
+
+			String str = getString(R.string.display_mode_time_out_desc);
+			final AlertDialog dialog = new AlertDialog.Builder(this)
+					.setTitle(R.string.display_mode_time_out_title)
+					.setMessage(String.format(str, Integer.toString(FALLBACK_DISPLAY_MODE_TIMEOUT)))
+					.setPositiveButton(com.android.internal.R.string.ok, listener)
+					.setNegativeButton(com.android.internal.R.string.cancel, listener)
+					.create();
+			dialog.show();
+
+			new AsyncTask(){
+				@Override
+				protected Object doInBackground(Object... arg0) {
+					int time = FALLBACK_DISPLAY_MODE_TIMEOUT;
+					while(time >= 0 && dialog.isShowing()){
+						publishProgress(time);
+						try{
+							Thread.sleep(1000);
+						}catch(Exception e){}
+						time--;
+					}
+					return null;
+				}
+				@Override
+				protected void onPostExecute(Object result) {
+					super.onPostExecute(result);
+					if (dialog.isShowing()) {
+						Log.d(TAG,"oldValue = " + oldValue);
+						switchDispFormat(oldValue);
+						dialog.dismiss();
+					}
+				}
+				@Override
+				protected void onProgressUpdate(Object... values) {
+					super.onProgressUpdate(values);
+					int time = (Integer)values[0];
+					String str = getString(R.string.display_mode_time_out_desc);
+					dialog.setMessage(String.format(str, Integer.toString(time)));
+				}
+			}.execute();
+			return dialog;
+		}
+		return null;
 	}
 }

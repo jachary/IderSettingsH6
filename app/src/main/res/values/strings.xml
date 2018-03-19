@@ -7,8 +7,9 @@
     <string name="netinfo">网络信息</string>
     <string name="wireless">无线网络</string>
     <string name="softap">无线热点</string>
-    
-    
+
+    <string name="display_mode_time_out_desc">在 %1$s 秒之后 ，将会恢复到原来的设置.\n请问是否保存当前的修改?</string>
+    <string name="display_mode_time_out_title">修改确认</string>
     <!-- Manifest configuration. -->
     <string name="app_name">Settings</string>
     <string name="corp_name">RockChip</string>

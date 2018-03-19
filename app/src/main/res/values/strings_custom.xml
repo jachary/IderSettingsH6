@@ -103,9 +103,9 @@
     <string name="display_setting">Mode setting</string>
     <string name="display_output_mode_title">Display output mode</string>
     <string name="display_output_mode_summary">Display output mode</string>
-    <string name="display_mode_time_out_title">Modifying comfirmation</string>
+    <!--<string name="display_mode_time_out_title">Modifying comfirmation</string>-->
     <string name="display_mode_before_dialog_title">Tips</string>
-    <string name="display_mode_time_out_desc">After %1$s s , it will restore to original preset.\nDo you want to save this change?</string>
+    <!--<string name="display_mode_time_out_desc">After %1$s s , it will restore to original preset.\nDo you want to save this change?</string>-->
     <string name="display_mode_before_dialog_content">After %1$s s , it will set new output mode.\nIf screen can not display normally,please wait 10s without any operation or click DisplayMode Button.</string>
     <string name="display_mode_auto_detect">Auto detect</string>
     <string name="display_mode_unsupport">Unsupport mode</string>
