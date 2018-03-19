@@ -6,21 +6,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.DisplayOutputManager;
-import android.hardware.display.DisplayManager;
-import android.preference.SeekBarDialogPreference;
 import android.telecom.Log;
-import android.util.AttributeSet;
 import android.view.Display;
-import android.view.View;
-import android.view.Window;
 import android.widget.SeekBar;
-import android.view.Display;
+import android.widget.TextView;
 
 import com.zxy.idersettings.R;
 
 public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeListener{
 	private DisplayOutputManager mDisplayManager;
 	private SeekBar mSeekBar;
+	private TextView mTextView;
 	private int OldValue;
 	private int MAXIMUM_VALUE = 100;
 	private int MINIMUM_VALUE = 90;
@@ -33,6 +29,7 @@ public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeList
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.display_size);
 		mSeekBar = (SeekBar) findViewById(R.id.dis_seekBar);
+		mTextView = (TextView) findViewById(R.id.dis_tv);
 		mDisplayManager = (DisplayOutputManager) this.getSystemService(Context.DISPLAYOUTPUT_SERVICE);
 		int dispType = mDisplayManager.getDisplayOutputType(Display.TYPE_BUILT_IN);
 		if(dispType == DisplayOutputManager.DISPLAY_OUTPUT_TYPE_HDMI){
@@ -47,6 +44,7 @@ public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeList
 		mSeekBar.setMax(MAXIMUM_VALUE - MINIMUM_VALUE);
 		OldValue = getDisplayPercent();
 		mSeekBar.setProgress(OldValue - MINIMUM_VALUE);
+		mTextView.setText((MAXIMUM_VALUE - MINIMUM_VALUE)*100/(OldValue - MINIMUM_VALUE)+"%");
 		mSeekBar.setOnSeekBarChangeListener(this);
 	}
 
@@ -59,6 +57,7 @@ public class DisplaySize extends Activity implements SeekBar.OnSeekBarChangeList
 	public void onProgressChanged(SeekBar seekBar, int progress,boolean fromTouch) {
 		// TODO Auto-generated method stub
 		  setDisplayPercent(progress + MINIMUM_VALUE);
+		mTextView.setText(progress + MINIMUM_VALUE+"%");
 	}
 
 	protected void onDialogClosed(boolean positiveResult) {
