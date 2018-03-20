@@ -390,6 +390,7 @@ android:sharedUserId="android.uid.system"
 
                   >
         </activity>
+        <activity android:name="com.rk_itvui.settings.datetime.TimeZoneAlterDialogActivity"/>
         <activity android:name="com.rk_itvui.settings.bluetooth_test"/>
     </application>
 
