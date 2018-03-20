@@ -57,6 +57,7 @@ public  class ScreensSettings extends FullScreenPreferenceActivity implements On
 	private DisplayOutputManager mDisplayManager;
 	private static final int FALLBACK_DISPLAY_MODE_TIMEOUT = 10;
 	private static final int DLG_RESOLUTION_CHANGE_WARNING = 11;
+	int setDispOutputOk = 0;
 	
 	private String setiface , setmode;
 	private String iface , vediomode , size ;
@@ -363,7 +364,9 @@ public void showDisplayDialog(){
 				return ;
 			switchDispFormat(mode_value[which]+"");
 			//// TODO: 18/3/19 request user dialog
+
 			showDialog(DLG_RESOLUTION_CHANGE_WARNING);
+
 		}
 	})
 	.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -387,7 +390,7 @@ public void showDisplayDialog(){
 			int mCurType = mDisplayManager.getDisplayOutputType(android.view.Display.TYPE_BUILT_IN);
 			IWindowManager wm = IWindowManager.Stub.asInterface(ServiceManager.checkService(
 					Context.WINDOW_SERVICE));
-			int setDispOutputOk = 0;
+
 			int w = 0;
 			int h = 0;
 			int density = 0;
