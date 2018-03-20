@@ -1232,20 +1232,14 @@
     <!-- Generic error message when the sleep policy could not be set. -->
     <string name="wifi_setting_sleep_policy_error">There was a problem changing the setting</string>
     <!-- Action bar text message to manually add a wifi network [CHAR LIMIT=20] -->
-    <string name="wifi_add_network">Add network</string>
-    <!-- Header for the list of wifi networks -->
-    <string name="wifi_access_points">Wi-Fi networks</string>
-    <!-- Menu option to scan Wi-Fi networks -->
-    <string name="wifi_menu_scan">Scan</string>
-    <!-- Menu option to Wi-Fi advanced settings -->
-    <string name="wifi_menu_advanced">Advanced</string>
-    <!-- Menu option to connect to a Wi-Fi network -->
-    <string name="wifi_menu_connect">Connect to network</string>
-    <!-- Menu option to delete a Wi-Fi network -->
-    <string name="wifi_menu_forget">Forget network</string>
-    <!-- Menu option to modify a Wi-Fi network configuration -->
-    <string name="wifi_menu_modify">Modify network</string>
-    <!-- Wi-Fi settings. text displayed when Wi-Fi is off and network list is empty [CHAR LIMIT=50] -->
+    <string name="wifi_add_network" msgid="6234851776910938957">"添加网络"</string>
+    <string name="wifi_access_points" msgid="2664629396767022441">"Wi-Fi 网络"</string>
+    <string name="wifi_menu_scan" msgid="1470911530412095868">"扫描"</string>
+    <string name="wifi_menu_advanced" msgid="7522252991919573664">"高级"</string>
+    <string name="wifi_menu_connect" msgid="4996220309848349408">"连接到网络"</string>
+    <string name="wifi_menu_forget" msgid="8736964302477327114">"不保存网络"</string>
+    <string name="wifi_menu_modify" msgid="2068554918652440105">"修改网络"</string>
+
     <string name="wifi_empty_list_wifi_off">To see available networks, turn Wi-Fi on.</string>
 
     <!-- Dialog for Access Points -->
@@ -1351,130 +1345,63 @@
     <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
     <string name="wifi_security_short_eap">802.1x</string>
 
-    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
-    <string name="wifi_security_none">None</string>
 
-    <!-- Do not translate.  Terminology for wifi with WEP security -->
+    <string name="wifi_security_none" msgid="7985461072596594400">"无"</string>
+    <string name="wifi_connect" msgid="1076622875777072845">"连接"</string>
+    <string name="wifi_forget" msgid="8168174695608386644">"不保存"</string>
+    <string name="wifi_save" msgid="3331121567988522826">"保存"</string>
+    <string name="wifi_cancel" msgid="6763568902542968964">"取消"</string>
+    <string name="wifi_wps_overlap_error" msgid="3352261777053283320">"检测到另一个 Wi-Fi 保护会话。请过几分钟后重试。"</string>
+    <string name="wifi_advanced_titlebar" msgid="1627063574532930090">"高级 Wi-Fi 设置"</string>
+    <string name="wifi_setting_frequency_band_title" msgid="7493768705046080060">"Wi-Fi 频带"</string>
+    <string name="wifi_setting_frequency_band_summary" msgid="3250740757118009784">"指定操作的频率范围"</string>
+    <string name="wifi_setting_frequency_band_error" msgid="837281974489794378">"设置频带时出现问题。"</string>
+
+
+    <string name="wifi_advanced_mac_address_title" msgid="6571335466330978393">"MAC 地址"</string>
+    <string name="wifi_advanced_ip_address_title" msgid="6215297094363164846">"IP 地址"</string>
+    <string name="wifi_advanced_settings_label" msgid="3654366894867838338">"IP 设置"</string>
+    <string name="wifi_ip_settings_menu_save" msgid="7296724066102908366">"保存"</string>
+    <string name="wifi_ip_settings_menu_cancel" msgid="6582567330136502340">"取消"</string>
+    <string name="wifi_ip_settings_invalid_ip_address" msgid="2513142355364274970">"请键入有效的 IP 地址。"</string>
+    <string name="wifi_ip_settings_invalid_gateway" msgid="8164264988361096450">"请键入有效的网关地址。"</string>
+    <string name="wifi_ip_settings_invalid_dns" msgid="8744583948328391047">"请键入有效的 DNS 地址。"</string>
+    <string name="wifi_ip_settings_invalid_network_prefix_length" msgid="40470058023181052">"键入长度在 0 到 32 之间的网络前缀。"</string>
+
+    <string name="wifi_dns1" msgid="7344118050720080045">"域名 1"</string>
+    <string name="wifi_dns2" msgid="1368601006824882659">"域名 2"</string>
+    <string name="wifi_gateway" msgid="163914742461092086">"网关"</string>
+    <string name="wifi_network_prefix_length" msgid="3028785234245085998">"网络前缀长度"</string>
+    <string name="wifi_p2p_settings_title" msgid="5933614000444751775">"Wi-Fi Direct"</string>
+    <string name="wifi_p2p_settings_summary" msgid="6653169526746701975">"设置对等连接"</string>
+    <string name="wifi_p2p_device_info" msgid="3191876744469364173">"设备信息"</string>
+    <string name="wifi_p2p_wps_setup" msgid="1780420204385670531">"Wi-Fi 保护设置"</string>
+    <string name="wifi_p2p_wps_pin" msgid="6025317359151049787">"键入 PIN"</string>
+    <string name="wifi_p2p_persist_network" msgid="1646424791818168590">"记住该连接"</string>
+    <string name="wifi_p2p_menu_search" msgid="7189970585393813135">"搜索"</string>
+    <string name="wifi_p2p_menu_create_group" msgid="7595229161883902082">"创建群组"</string>
+    <string name="wifi_p2p_menu_remove_group" msgid="4844634506540667517">"删除群组"</string>
+    <string name="wifi_p2p_menu_advanced" msgid="2578792521809265949">"高级"</string>
+    <string name="wifi_p2p_available_devices" msgid="5943352520059654483">"可用设备"</string>
+    <string name="wifi_tether_checkbox_text" msgid="6961605862058056788">"便携式 Wi-Fi 热点"</string>
+    <string name="wifi_tether_enabled_subtext" msgid="8948641212931906143">"便携式热点 <xliff:g id="NETWORK_SSID">%1$s</xliff:g> >已启用"</string>
+    <string name="wifi_tether_failed_subtext" msgid="2654888578056042315">"便携式 Wi-Fi 热点错误"</string>
+    <string name="wifi_tether_configure_ap_text" msgid="3474995108398156258">"配置 Wi-Fi 热点"</string>
+    <string name="wifi_tether_configure_subtext" msgid="1927454307836232128">"<xliff:g id="NETWORK_SSID">%1$s</xliff:g> <xliff:g id="NETWORK_SECURITY">%2$s</xliff:g> 便携式 Wi-Fi 热点"</string>
+    <string name="wifi_tether_configure_ssid_default" msgid="8467525402622138547">"Android 热点"</string>
     <string name="wifi_security_wep">WEP</string>
-    <!-- Do not translate.  Terminology for wifi with WPA security -->
     <string name="wifi_security_wpa">WPA PSK</string>
-    <!-- Do not translate.  Terminology for wifi with WPA2 security -->
     <string name="wifi_security_wpa2">WPA2 PSK</string>
-    <!-- Do not translate.  Terminology for wifi with both WPA/WPA2 security, or unknown -->
     <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
-    <!-- Do not translate.  Terminology for wifi with unknown PSK type -->
     <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
-    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
     <string name="wifi_security_eap">802.1x EAP</string>
 
-    <!-- Button label to connect to a Wi-Fi network -->
-    <string name="wifi_connect">Connect</string>
-    <!-- Button label to delete a Wi-Fi network -->
-    <string name="wifi_forget">Forget</string>
-    <!-- Button label to save a Wi-Fi network configuration -->
-    <string name="wifi_save">Save</string>
-    <!-- Button label to dismiss the dialog -->
-    <string name="wifi_cancel">Cancel</string>
-
-    <!-- Errors reported on wifi settings page -->
-    <!-- Toast message indicating WPS overlap detection [CHAR LIMIT=75] -->
-    <string name="wifi_wps_overlap_error">Another Wi-Fi protected session was detected. Try again in a few minutes.</string>
-
-    <!-- Wi-Fi Advanced Settings -->
-    <skip />
-    <!-- Wi-Fi settings screen, advanced, settings section.  This is a header shown above advanced wifi settings. -->
-    <string name="wifi_advanced_titlebar">Advanced Wi-Fi</string>
-    <!-- Wi-Fi settings screen, setting title for setting the band [CHAR LIMIT=50] -->
-    <string name="wifi_setting_frequency_band_title">Wi-Fi frequency band</string>
-    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50] -->
-    <string name="wifi_setting_frequency_band_summary">Specify the frequency range of operation</string>
-    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
-    <string name="wifi_setting_frequency_band_error">There was a problem setting the frequency band.</string>
-    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
-    <string name="wifi_advanced_mac_address_title">MAC address</string>
-    <!-- Title of the screen to adjust IP settings -->
-    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's current IP address. -->
-    <string name="wifi_advanced_ip_address_title">IP address</string>
-
-    <!-- Wifi Advanced settings.  Used as a label under the shortcut icon that goes to Wifi advanced settings. [CHAR LIMIT=20] -->
-    <string name="wifi_advanced_settings_label">IP settings</string>
-    <!-- Menu item to save the IP settings -->
-    <string name="wifi_ip_settings_menu_save">Save</string>
-    <!-- Menu ietm to cancel the IP settings -->
-    <string name="wifi_ip_settings_menu_cancel">Cancel</string>
-    <!-- Error message if the IP address is not valid [CHAR LIMIT=50] -->
-    <string name="wifi_ip_settings_invalid_ip_address">Type a valid IP address.</string>
-    <!-- Error message if the gateway is not valid [CHAR LIMIT=50] -->
-    <string name="wifi_ip_settings_invalid_gateway">Type a valid gateway address.</string>
-    <!-- Error message if the dns is not valid [CHAR LIMIT=50] -->
-    <string name="wifi_ip_settings_invalid_dns">Type a valid DNS address.</string>
-    <!-- Error message if the network prefix length is not valid [CHAR LIMIT=50] -->
-    <string name="wifi_ip_settings_invalid_network_prefix_length">Type a network prefix length between 0 and 32.</string>
-    <!-- Label for the DNS (first one) -->
-    <string name="wifi_dns1">DNS 1</string>
-    <!-- Hint text for DNS -->
-    <string name="wifi_dns1_hint" translatable="false">8.8.8.8</string>
-    <!-- Label for the DNS (second one) -->
-    <string name="wifi_dns2">DNS 2</string>
-    <!-- Hint text for DNS -->
-    <string name="wifi_dns2_hint" translatable="false">4.4.4.4</string>
-    <!-- Label for the gateway of the network -->
-    <string name="wifi_gateway">Gateway</string>
-    <!-- Hint text for the gateway -->
     <string name="wifi_gateway_hint" translatable="false">192.168.1.1</string>
-    <!-- Label for the network prefix of the network [CHAR LIMIT=25] -->
-    <string name="wifi_network_prefix_length">Network prefix length</string>
-    <!-- Hint text for network prefix length -->
-    <string name="wifi_network_prefix_length_hint" translatable="false">24</string>
 
-    <!-- Wi-Fi p2p / Wi-Fi Direct settings -->
-    <!-- Used in the 1st-level settings screen to launch Wi-fi Direct settings [CHAR LIMIT=25] -->
-    <string name="wifi_p2p_settings_title">Wi-Fi direct</string>
-    <!-- Summary for Wi-fi Direct settings item in the 1st-level settings screen [CHAR LIMIT=50] -->
-    <string name="wifi_p2p_settings_summary">Set up peer-to-peer connectivity</string>
-    <string name="wifi_p2p_device_info">Device information</string>
-    <string name="wifi_p2p_wps_setup">Wi-Fi protected setup</string>
-    <string name="wifi_p2p_wps_pin">Type PIN</string>
-    <string name="wifi_p2p_persist_network">Remember this connection</string>
-    <!-- Menu option to discover peers -->
-    <string name="wifi_p2p_menu_search">Search</string>
-    <!-- Menu option to create a group -->
-    <string name="wifi_p2p_menu_create_group">Create group</string>
-    <!-- Menu option to remove a group -->
-    <string name="wifi_p2p_menu_remove_group">Remove group</string>
-    <!-- Menu option to Wi-Fi p2p advanced settings -->
-    <string name="wifi_p2p_menu_advanced">Advanced</string>
-    <!-- Title for available p2p devices -->
-    <string name="wifi_p2p_available_devices">Available devices</string>
 
-    <!-- Wifi AP settings -->
-    <!-- Label for wifi tether checkbox. Toggles Access Point on/off -->
-    <string name="wifi_tether_checkbox_text">Portable Wi-Fi hotspot</string>
-    <!-- Subtext for wifi tether checkbox on success -->
-    <string name="wifi_tether_enabled_subtext">Portable hotspot <xliff:g id="network_ssid">%1$s</xliff:g> active</string>
-    <!-- Subtext for wifi tether checkbox on failure -->
-    <string name="wifi_tether_failed_subtext">Portable Wi-Fi hotspot error</string>
-    <!-- Used to open the ssid and security dialog for Wifi Access Point -->
-    <string name="wifi_tether_configure_ap_text">Configure Wi-Fi hotspot</string>
-    <!-- Subtext on configuration preference to indicate SSID and security chosen -->
-    <string name="wifi_tether_configure_subtext"><xliff:g id="network_ssid">%1$s</xliff:g> <xliff:g id="network_security">%2$s</xliff:g> portable Wi-Fi hotspot</string>
-    <!-- Default access point SSID used for tethering -->
-    <string name="wifi_tether_configure_ssid_default">AndroidHotspot</string>
-
-    <!--
-         Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Wi-Fi Testing on the diagnostic screen
-    -->
     <string name="testing_wifi_info" translatable="false">Wi-Fi information</string>
-    <!--
-         Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager disableNetwork API
-    -->
     <string name="disableNetwork" translatable="false">disableNetwork</string>
-    <!--
-         Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager enableNetwork API
-    -->
+
     <string name="enableNetwork" translatable="false">enableNetwork</string>
     <!--
          Do not translate. Used for diagnostic screens, precise translation is not necessary
