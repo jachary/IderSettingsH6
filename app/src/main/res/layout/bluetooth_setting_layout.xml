@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="蓝牙"
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/bluetooth_on_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:textOff=""
+        android:textOn=""
+        android:background="@drawable/bluetooth_off"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:switchMinWidth="20dp"
+        android:textSize="20sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/settings_head_line" />
+
+    <LinearLayout
+        android:id="@+id/devices_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="已配对设备"
+            android:textColor="@color/bluetooth_title_text_color"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/paired_devices_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:focusable="false"
+            android:background="@color/bluetooth_listview_bg"
+            android:listSelector="@android:color/transparent" >
+        </ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:textColor="@color/bluetooth_title_text_color"
+            android:text="可用设备"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/avaiable_devices_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:focusable="false"
+            android:background="@color/bluetooth_listview_bg"
+            android:listSelector="@android:color/transparent">
+        </ListView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/bluetooth_title_text_color"
+        android:text="打开蓝牙搜索附近可用设备"
+        android:textSize="20sp" />
+
+</FrameLayout>

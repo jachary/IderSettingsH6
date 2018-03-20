@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bluetooth_listview_item_bg"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_weight="5"
+        android:layout_width="0dp"
+        android:paddingLeft="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bluetooth_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="xiaomi7plus"
+            android:textColor="@color/bluetooth_item_text_color"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/bluetooth_mac_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="32:a4:6f:35:a0:c3"
+            android:textColor="@color/bluetooth_item_text_color"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+   <!-- <TextView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="25sp"
+        android:text="更多 >"
+        android:textColor="#2B2BD5" />-->
+    <ImageView
+        android:id="@+id/bluetooth_item_iv"
+        android:background="@drawable/bluetooth_item_selector"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="20dp"
+        android:layout_width="60dp"
+        android:layout_height="30dp" />
+
+</LinearLayout>

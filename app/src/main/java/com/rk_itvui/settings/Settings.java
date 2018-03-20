@@ -316,7 +316,7 @@ public class Settings extends Activity {
 			break;
         case BLUETOOTH_SETTING:
 			Log.d(TAG,"BLUETOOTH_SETTING");
-            Intent intent = new Intent(Settings.this, BlueToothItem.class);
+            Intent intent = new Intent(Settings.this, bluetooth_test.class);
             startIntentWithTranlete(Settings.this,intent);
 			break;
 		case DEVICES_MESSAGE:

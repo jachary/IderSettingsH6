@@ -48,5 +48,11 @@
     
     <color name="gray">#999999</color>
     <color name="lightgray">#acacac</color>
+
+    <color name="bluetooth_list_bg">#323232</color>
+    <color name="no_color">#00000000</color>
+    <color name="bluetooth_listview_bg">#19191B</color>
+    <color name="bluetooth_item_text_color">#2EBFF4</color>
+    <color name="bluetooth_title_text_color">#ffffff</color>
     
 </resources>
