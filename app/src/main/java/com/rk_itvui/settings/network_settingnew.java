@@ -99,15 +99,15 @@ public class network_settingnew extends FullScreenActivity implements OnItemClic
 		map_WiFiApItem.put("networkSettingItem", Ap);
 		map_WiFiApItem.put("networkSettingStatus", apInfo);
 
-		map_Dialing.put("networkSettingIcon", R.drawable.network_icon_eth);
-		map_Dialing.put("networkSettingItem", getString(R.string.pppoe_settings));
+//		map_Dialing.put("networkSettingIcon", R.drawable.network_icon_eth);
+//		map_Dialing.put("networkSettingItem", getString(R.string.pppoe_settings));
 		
 		// 鎶妋ap1鍜宮ap2娣诲姞鍒發ist涓�
 		listItem.add(map_WiredItem);
 		listItem.add(map_WiFiItem);
 	//	listItem.add(map_WirelessStatusItem);
 		listItem.add(map_WiFiApItem);
-		listItem.add(map_Dialing);
+		//listItem.add(map_Dialing);
 		list = (ListView) findViewById(R.id.networkListView);
 
 	        listItemAdapter = new SimpleAdapter(this,
